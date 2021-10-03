@@ -1,0 +1,137 @@
+---
+title: イベントアジェンダの管理
+parent: Virtual Event 
+grandparent: Experiences
+description: In this topic you will learn how to upload and configure the event agenda for a Virtual Event Experience.
+layout: staging
+---
+<article class="bcls-article">
+  <h1>イベントアジェンダの管理</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>アジェンダモジュールは、外部の.csvアジェンダファイルのアップロードをサポートしているため、すべてのアジェンダアイテムを手動でアジェンダモジュールに入力する必要はありません。アジェンダファイルのアップロードは、イベントアジェンダが最初に作成される方法です。アジェンダをアップロードした後、アジェンダモジュールを使用して編集できます。</p>
+    <aside class="bcls-aside bcls-aside--information">注:アップロード用の議題ファイルの作成については、「<a href="creating-agenda-virtual-event-experience.html">イベント議題ファイルの作成」を参照してください</a>。</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="upload">アジェンダファイルのアップロード</h2>
+    <p>既存のアジェンダをアジェンダモジュールにインポートする前に、アジェンダファイルを.csvファイルにエクスポートする必要があります。<strong>アジェンダモジュールは、.csvファイルのみをインポートできます。</strong></p>
+    <p>Gallery Site Editorを使用して、イベントアジェンダをアップロードおよび構成できます。アジェンダファイルを仮想イベントエクスペリエンスにアップロードするには、次の手順に従います。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>エクスペリエンス名をクリックして、ギャラリーサイトエディターを開きます。</li>
+      <li><code translate="No"></code>左側のナビゲーションで、[ <strong>サイトの機能] &gt; [議題] をクリックします</strong>。</li>
+      <li><strong>アジェンダのアップロード] をクリックします</strong>。</li>
+      <li>アップロードするアジェンダファイルを参照して選択します。</li>
+      <li>アジェンダが [ <strong>マイアジェンダ]</strong>ページにリストされていることを確認します。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/agenda-imported.png" /></figure>
+      </li>
+    </ol>
+    <p>アジェンダのインポート中にエラーが発生した場合は、メッセージが表示されます。インポート後、<strong></strong><strong>ステータスは非アクティブ化されます</strong>。ステータスがDEACTIVATEDのアジェンダは、仮想イベントエクスペリエンスに表示されません。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="title">アジェンダタイトルの編集</h2>
+    <p>アジェンダのタイトルは、アジェンダの上にあるエクスペリエンスホームページに表示されます。デフォルトでは、アジェンダタイトルはインポートされたアジェンダファイル名に設定されます。 </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/agenda-title.png" /></figure>
+    <p>議題のタイトルを編集するには、編集アイコンをクリックし、<strong>タイトルを入力して Enter キーを押します</strong>。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="view">議題を表示する</h2>
+    <p>アジェンダファイルがアップロードされると、[ <strong>マイアジェンダ</strong> ] ページに表示されます。<strong></strong>議題の詳細を表示するには、<strong>イベント名をクリックします</strong>。議題が開き、詳細が表示されます。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/agenda-details.png" /></figure>
+    <p>ページの左側にある日付をクリックして、その日の議題を表示します。トラックは、ページ上部の列ヘッダーに表示されます。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="adding_sessions">セッションの追加</h2>
+    <p>新しいセッションを追加するには、次の手順に従います。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>アジェンダをクリックして、アジェンダエディタを開きます。</li>
+      <li>空き時間枠をクリックします。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/agenda-session-add.png" /></figure>
+      </li>
+      <li>セッション情報を入力します。
+        <ul>
+          <li>セッション名</li>
+          <li>スピーカー-クリック<strong>スピーカーを選択</strong>と<a href="#select_speakers">1つ以上のスピーカーを選択します</a>セッションのために</li>
+          <li>開始日</li>
+          <li>開始時刻</li>
+          <li>長さ</li>
+          <li>説明</li>
+          <li>トラック-セッションを割り当てるトラックを選択します</li>
+          <li>セッションタイプ
+            <ul>
+              <li>セッション</li>
+              <li>基調</li>
+              <li>ミーティング</li>
+              <li>その他</li>
+            </ul>
+          </li>
+          <li>ビデオID-セッション、基調講演、その他のセッションタイプで利用可能</li>
+          <li>URL-会議セッションタイプで使用可能</li>
+          <li>表紙画像</li>
+          <li>関連コンテンツ-セッションコンテンツ（配布物またはスライド）へのリンクを提供するために使用できます
+            <ul>
+              <li>ラベル-コンテンツのラベル</li>
+              <li>URL-コンテンツへのリンク</li>
+            </ul>
+          </li>
+        </ul>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/agenda-session-add-details.png" /></figure>
+      </li>
+      <li>[<strong>保存</strong>]をクリックします。</li>
+    </ol>
+    <p>セッションがアジェンダに追加されていることを確認します。同じトラックに同時にスケジュールされた複数のセッションがある場合、それらは強調表示され、隣り合って表示されます。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/agenda-session-add-same-time.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="editing_sessions">セッションの編集と削除</h2>
+    <p>セッションを編集または削除するには、セッションをクリックして[セッションの編集]パネルを開きます。セッションを編集するには、変更を行い、[ <strong>保存] をクリックします</strong>。セッションを削除するには、[ <strong>セッションの削除] をクリックします</strong>。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="select_speaker">セッションへのスピーカーの追加</h2>
+    <p>セッションにスピーカーを追加するには、次の手順に従います。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>セッションをクリックして、セッションエディタを開きます。</li>
+      <li>[ <strong>スピーカーを選択] をクリックします</strong>。</li>
+      <li>1 つ以上のスピーカーを選択するか、[ <strong></strong>スピーカーの作成] をクリックして新しいスピーカーを作成します。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/agenda-select-speaker.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">注:スピーカーの作成については、<a href="managing-event-speakers.html">イベントスピーカーの管理を参照してください</a>。</aside>
+      </li>
+      <li>[<strong>保存</strong>]をクリックします。</li>
+    </ol>
+    [ <strong>検索</strong> ] フィールドは、スピーカーを検索するために使用できます。</section>
+  <section class="bcls-section">
+    <h2 id="add_track">新しいトラックを追加する</h2>
+    <p>トラックは、関連するセッションをグループ化するために使用されます。たとえば、マーケティングトラックには、すべてのマーケティング関連セッションが含まれます。アジェンダには通常、複数のトラックがあります。新しいトラックを追加するには、次の手順に従います。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>アジェンダをクリックして、アジェンダエディタを開きます。</li>
+      <li>アジェンダの上部にある [ <strong>新しいトラックを追加]</strong>リンクをクリックします。リンクを表示するには、アジェンダを右にスクロールする必要がある場合があります。</li>
+      <li><strong></strong>トラック名を入力し、<strong> Enter キーを押します</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/agenda-add-track.png" /></figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="edit_track">トラックの編集</h2>
+    <p>トラックを編集するには、トラック名をクリックして変更を加え、<strong> Enter</strong>を押して変更を保存します。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/agenda-track-edit.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="reorder_track">トラックの並べ替え</h2>
+    <p> アジェンダ内のトラックの順序を変更するには、次の手順に従います。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>アジェンダをクリックして、アジェンダエディタを開きます。</li>
+      <li>トラック名にカーソルを合わせて移動し、グラブアイコンをクリックして、トラックを新しい場所にドラッグします。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/agenda-reorder-track.png" /></figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="activate">アジェンダのアクティブ化と非アクティブ化</h2>
+    <p>アジェンダステータスは、アジェンダが関連する仮想イベントエクスペリエンスに表示されるかどうかを決定します。ステータスは、アジェンダ名の下のページヘッダーに表示されます。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/agenda-status.png" /></figure>
+    <ul>
+      <li><strong>活性化</strong> -アジェンダは、関連する仮想イベントエクスペリエンスに表示されます</li>
+      <li><strong>非アクティブ化</strong> -アジェンダは、関連する仮想イベントエクスペリエンスには表示されません</li>
+    </ul>
+    <p>アジェンダをアクティブにするには、をクリックします<strong>活性化</strong>ページの上部にあります。アジェンダを無効にするには、アジェンダをクリックし、[ <strong>非アクティブ化] をクリックします</strong>。アジェンダをアクティブ化/非アクティブ化した後、エクスペリエンスを再公開する必要がないことに注意してください。</p>
+  </section>
+</article>

@@ -1,627 +1,11 @@
-﻿<!doctype html>
-<html lang="ja">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  
-  <title>ステップバイステップ:ページ内エクスペリエンスの作成と公開</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
-
-<body class="body">
-
-<header>
-  <div class="div-header">
-    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">Brightcove ギャラリー<sup>™</sup></span></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">言語の選択</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-      <option value="">Brightcove のその他のドキュメント</option>
-      
-        
-          <option value="https://support.brightcove.com">ドキュメントホーム</option>
-        
-      
-        
-          <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
-        
-      
-        
-          <option value="https://beacon.support.brightcove.com">Brightcove Beacon</option>
-        
-      
-        
-          <option value="https://campaign.support.brightcove.com">Brightcove キャンペーン</option>
-        
-      
-        
-          <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-        
-      
-        
-          <option value="https://live.support.brightcove.com">Brightcove Live</option>
-        
-      
-        
-          <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-        
-      
-        
-          <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-        
-      
-        
-          <option value="https://social.support.brightcove.com">Brightcove ソーシャル</option>
-        
-      
-        
-          <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-        
-      
-        
-          <option value="https://player.support.brightcove.com">Brightcove のプレーヤー開発</option>
-        
-      
-        
-          <option value="https://apis.support.brightcove.com">Video CloudプラットフォームAPI</option>
-        
-      
-        
-          <option value="https://sdks.support.brightcove.com">ビデオクラウドデバイス SDK</option>
-        
-      
-        
-          <option value="https://integrations.support.brightcove.com">統合および CMS コネクタ</option>
-        
-      
-        
-          <option value="https://general.support.brightcove.com">ビデオクラウドの一般情報</option>
-        
-      
-        
-          <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-        
-      
-    </select>
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="サポート"/> サポートへのお問い合わせ</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="システムステータス"/> システムステータス</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">ホーム</a></li>
-      
-      
-      
-      <li class="breadcrumb-item"><a href="/get-started/">新しいVideo Cloud Studioの基礎</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">ステップバイステップ:ページ内エクスペリエンスの作成と公開</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-    <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Brightcove のその他のドキュメント</option>
-          
-            
-              <option value="https://support.brightcove.com">ドキュメントホーム</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Brightcove ビーコン</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Brightcove キャンペーン</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove ・ライブ</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove ギャラリー</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove ソーシャル</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Brightcove のプレーヤー開発</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">Video CloudプラットフォームAPI</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">ビデオクラウドデバイス SDK</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">統合および CMS コネクタ</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">ビデオクラウドの一般情報</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-        <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">ホーム</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/get-started/index.html">はじめに<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/get-started/step-step-creating-and-publishing-portal-experience.html">ポータルエクスペリエンスの作成</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/step-step-creating-and-publishing-page-experience.html">ページ内エクスペリエンスの作成</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/creating-and-managing-gallery-experiences.html">エクスペリエンスの作成と管理</a></li>
-                  
-                
-                  
-                    <li><a href="/training/gallery-training-videos.html">ギャラリー・トレーニング・ビデオ</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-gallery.html">Brightcove ギャラリーの入門</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-gallery-experiences.html">ギャラリーエクスペリエンスの概要</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-introduction-gallery.html">トレーニング:ギャラリーの紹介</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">トレーニング:ポータル・エクスペリエンスの構築</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">トレーニング:ページ内エクスペリエンスの構築</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/experiences/index.html">エクスペリエンス <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/portal/index.html">ポータル<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/portal/adding-video-cloud-videos-portal-experience.html">ビデオクラウド動画を追加する</a></li>
-                        
-                        <li><a href="/experiences/portal/adding-videos-portal-experience.html">ビデオを追加する</a></li>
-                        
-                        <li><a href="/experiences/portal/adding-youtube-videos-portal-experience.html">YouTube 動画を追加する</a></li>
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">カスタムドメインの割り当て</a></li>
-                        
-                        <li><a href="/experiences/portal/changing-player-layout-portal-experience.html">プレーヤーのレイアウトを変更する</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-calls-action-portal-experience.html">アクションへの呼び出しの設定</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-search-engine-optimization-settings-portal-experience.html">SEO設定の構成</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-details-portal-experience.html">エクスペリエンスの詳細の設定</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-third-party-tracking-portal-experience.html">サードパーティトラッキングの設定</a></li>
-                        
-                        <li><a href="/experiences/portal/controlling-access-portal-experience.html">アクセスの制御</a></li>
-                        
-                        <li><a href="/experiences/portal/overview-creating-editing-and-publishing-portal-experiences.html">ポータルエクスペリエンスの作成、編集、公開</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-appearance-and-behavior-portal-experience.html">外観と動作のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-catalogue-template-settings.html">カタログテンプレート設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-chronicle-template-settings.html">クロニクルテンプレート設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-content-portal-experience-pages.html">ポータル・ページのコンテンツのカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-marquee-template-settings.html">マーキーテンプレート設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-player-and-lead-form-settings-portal-experience.html">プレーヤーおよびリードフォーム設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-site-configuration-portal-experience.html">サイト構成のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-site-features-portal-experience.html">サイト機能のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-social-settings-portal-experience.html">ソーシャル設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-style-portal-experience.html">スタイルのカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-video-and-playback-settings-portal-experience.html">ビデオと再生設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-video-settings-portal-experience.html">ビデオ設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/downloading-videos-portal-experience.html">ビデオのダウンロード</a></li>
-                        
-                        <li><a href="/experiences/portal/exporting-gallery-lead-data.html">ギャラリーリードデータのエクスポート</a></li>
-                        
-                        <li><a href="/experiences/portal/indexing-gallery-portal-experience.html">ポータルエクスペリエンスのインデックス作成</a></li>
-                        
-                        <li><a href="/experiences/portal/overview-gallery-portal-templates.html">ギャラリーポータルのテンプレートの概要</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">プレビューと公開</a></li>
-                        
-                        <li><a href="/experiences/portal/updating-gallery-templates.html">ギャラリーテンプレートの更新</a></li>
-                        
-                        <li><a href="/experiences/portal/using-lead-form-portal-experience.html">リードフォームの使用</a></li>
-                        
-                        <li><a href="/experiences/portal/using-custom-fonts-portal-experience.html">カスタムフォントを使用する</a></li>
-                        
-                        <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">サイトエディタを使用したエクスペリエンスのカスタマイズ</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/inpage/index.html">ページ内<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/inpage/adding-components-page-experience.html">コンポーネントの追加</a></li>
-                        
-                        <li><a href="/experiences/inpage/adding-interactions-page-experience.html">インタラクションの追加</a></li>
-                        
-                        <li><a href="/experiences/inpage/adding-videos-page-experience.html">ビデオを追加する</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-companion-components-page-experience.html">コンパニオンコンポーネントの構成</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-details-page-experience.html">エクスペリエンスの詳細の設定</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-settings-page-experience.html">エクスペリエンスの設定の構成</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-video-downloads-page-experience.html">ビデオダウンロードの設定</a></li>
-                        
-                        <li><a href="/experiences/inpage/creating-custom-themes-page-experiences.html">カスタムテーマの作成</a></li>
-                        
-                        <li><a href="/experiences/inpage/customizing-page-experience.html">ページ内エクスペリエンスのカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/inpage/customizing-style-page-experience.html">スタイルのカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/inpage/overview-gallery-page-experience-templates.html">ページ内エクスペリエンステンプレートの概要</a></li>
-                        
-                        <li><a href="/experiences/inpage/overview-creating-editing-and-publishing-page-experiences.html">概要:ページ内エクスペリエンスの作成と公開</a></li>
-                        
-                        <li><a href="/experiences/inpage/previewing-and-publishing-page-experience.html">プレビューと公開</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-analytics.html">アナリティクスの確認</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-calls-action-analytics.html">行動を促す分析の確認</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-analytics-dashboard.html">アナリティクスダッシュボードの確認</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-video-analytics.html">動画分析の確認</a></li>
-                        
-                        <li><a href="/experiences/portal/updating-gallery-templates.html">ギャラリーテンプレートの更新</a></li>
-                        
-                        <li><a href="/experiences/inpage/using-dynamic-video-overrides-page-experience.html">ダイナミックビデオオーバーライドを使用する</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/live/index.html">ライブイベント<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/live/adding-pigeonhole-live-event-page-experience.html">ライブインページにPigeonholeを追加する</a></li>
-                        
-                        <li><a href="/experiences/live/adding-pigeonhole-live-event-portal-experience.html">ライブポータルへのピジョンホールの追加</a></li>
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">カスタムドメインの割り当て</a></li>
-                        
-                        <li><a href="/experiences/portal/controlling-access-portal-experience.html">アクセスの制御</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-page-experience.html">ライブイベントインページエクスペリエンスの作成</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-portal-experience.html">ライブイベントポータルエクスペリエンスの作成</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-state-portal-event-experience.html">ライブイベント状態の作成</a></li>
-                        
-                        <li><a href="/experiences/live/creating-post-event-state-portal-event-experience.html">イベント後の状態の作成</a></li>
-                        
-                        <li><a href="/experiences/live/creating-pre-event-state-portal-event-experience.html">イベント前の状態の作成</a></li>
-                        
-                        <li><a href="/experiences/live/customizing-live-event-portal-settings.html">ライブイベントポータルの設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">プレビューと公開</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/landing/index.html">ランディングページ<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">カスタムドメインの割り当て</a></li>
-                        
-                        <li><a href="/experiences/landing/creating-landing-page-experience.html">ランディングページエクスペリエンスの作成</a></li>
-                        
-                        <li><a href="/experiences/portal/exporting-gallery-lead-data.html">ギャラリーリードデータのエクスポート</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">プレビューと公開</a></li>
-                        
-                        <li><a href="/experiences/portal/using-lead-form-portal-experience.html">リードフォームの使用</a></li>
-                        
-                        <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">サイトエディタを使用したエクスペリエンスのカスタマイズ</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/general/index.html">一般<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/general/gallery-system-requirements.html">ギャラリーのシステム要件</a></li>
-                  
-                
-                  
-                    <li><a href="/general/troubleshooting-brightcove-gallery-issues.html">Brightcove ギャラリーの問題のトラブルシューティング</a></li>
-                  
-                
-                  
-                    <li><a href="/general/brightcove-gallery-cookies.html">Brightcove ギャラリーのクッキー</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/settings/index.html">ギャラリーの設定<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/settings/configuring-gallery-settings.html">ギャラリー設定の構成</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-youtube-settings.html">YouTubeの設定を構成する</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-access-control-profiles.html">アクセス制御プロファイルの設定</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-custom-domains-and-ssl.html">カスタムドメインと SSL の設定</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-auth0.html">Auth0 でのポータル・エクスペリエンスの保護</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-okta.html">Okta でのポータルエクスペリエンスの保護</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-ssl.html">SSL を使用したポータルエクスペリエンスの保護</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-single-sign-active-directory-federation-services.html">ADFS を使用したシングルサインオンの構成</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/develop/index.html">開発者<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/develop/page-experience-code-snippets.html">ページ内エクスペリエンスコードスニペット</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experiences-custom-css-reference.html">ページ内エクスペリエンスのカスタム CSS リファレンス</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/embedding-brightcove-page-experiences-cms.html">CMS へのページ内エクスペリエンスの埋め込み</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/overview-page-experience-api.html">概要:ページ内エクスペリエンス API </a></li>
-                  
-                
-                  
-                    <li><a href="/develop/overview-page-experience-client-api.html">概要:ページ内エクスペリエンスクライアント API </a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experience-api-error-reference.html">ページ内エクスペリエンス API エラーリファレンス</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experience-client-api-sample.html">ページ内エクスペリエンスクライアント API サンプル</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/quick-start-page-experience-platform-rest-api.html">「クイックスタート:ページ内エクスペリエンスプラットフォーム (REST) API </a></li>
-                  
-                
-                  
-                    <li><a href="/develop/reference.html">ページ内エクスペリエンスプラットフォーム API リファレンス</a></li>
-                  
-                
-                  
-                    <li><a href="https://docs.brightcove.com/in-page-exerience-client-api/ClientApi.html">ページ内エクスペリエンスクライアント API リファレンス</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/training/index.html"><strong>トレーニング+ </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/training/gallery-training-videos.html">ギャラリー・トレーニング・ビデオ</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-introduction-gallery.html">トレーニング:ギャラリーの紹介</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">トレーニング:ポータル・エクスペリエンスの構築</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">トレーニング:ページ内エクスペリエンスの構築</a></li>
-                  
-                
-                  
-                    <li><a href="/training/brightcove-university.html">Brightcove Universityトレーニングコース</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/release-notes/index.html">リリースノート<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/gallery-release-notes.html">ギャラリーリリースノート</a></li>
-                  
-                
-                  
-                    <li><a href="/release-notes/gallery-template-release-notes.html">ギャラリーテンプレートのリリースノート</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/support/index.html"><strong>サポート+ </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                  
-                
-                  
-                    <li><a href="/support/viewing-brightcove-system-status-page.html">Brightcove のシステムステータスページの表示</a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">営業へのお問い合わせ</a></li>
-                  
-                
-                  
-                    <li><a href="/support/opening-case-with-brightcove-support.html">サポートケースを開く</a></li>
-                  
-                
-              </ul>
-            
-          
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-  <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="ナビゲーションメニュー"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">ページコンテンツ</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="新しいタブで開く" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
-
+---
+title: 'ステップバイステップ：ページ内エクスペリエンスの作成と公開'
+parent: Getting Started
+description: The purpose of this Quick Start is to show you how you can create an In-Page Experience using Brightcove Gallery.
+---
 <article class="bcls-article">
-  <h1>ステップバイステップ:ページ内エクスペリエンスの作成と公開</h1>
-  <summary>このクイックスタートの目的は、Brightcove ギャラリーを使用してページ内エクスペリエンスを作成する方法を示すことです。</summary>
+  <h1>ステップバイステップ:ページはめ込みエクスペリエンスの作成と公開</h1>
+  <summary>{{ page.description }}</summary>
   <section class="bcls-section">
     <p>このクイックスタートを完了すると、次の事項ができるようになります。</p>
     <ul>
@@ -630,7 +14,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>ページ内エクスペリエンスのカスタマイズとスタイル設定</li>
       <li>ページ内エクスペリエンスをプレビューして公開する</li>
     </ul>
-    <aside class="bcls-aside bcls-aside--information">注：ポータルエクスペリエンスの作成に関するステップバイステップガイドについては、「<a href="step-step-creating-and-publishing-portal-experience.html">ステップバイステップ」を参照してください。ポータル・エクスペリエンスの作成と公開</a></aside>
+    <aside class="bcls-aside bcls-aside--information">注:ポータルエクスペリエンスの作成に関するステップバイステップガイドについては、「<a href="step-step-creating-and-publishing-portal-experience.html">ステップバイステップ」を参照してください。ポータルエクスペリエンスの作成と公開</a>。</aside>
   </section>
   <section class="bcls-section">
     <h2 id="audience">Audience</h2>
@@ -640,67 +24,67 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="prereq">前提条件</h2>
     <ul>
       <li>ギャラリーモジュールにアクセスできる Video Cloud アカウント</li>
-      <li>Video Cloudについての実用的な知識</li>
-      <li>必要に応じて、このクイックスタートで使用されるサンプル動画を<a href="https://files.brightcove.com/sample_animal_videos.zip">ダウンロード</a>できます</li>
-      <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">ギャラリートレーニングを使用してページ内エクスペリエンスの構築を確認するのに役立つ</a></li>
+      <li>ビデオクラウドの実用知識</li>
+      <li>このクイックスタートで使用されるサンプルビデオは、<a href="https://files.brightcove.com/sample_animal_videos.zip"></a>必要に応じてダウンロードできます。</li>
+      <li><a href="/training/training-demand-building-page-experiences-using-gallery.html"></a>ギャラリートレーニングを使用してページ内エクスペリエンスの構築を確認するのに便利</li>
     </ul>
   </section>
   <section class="bcls-section">
-    <h2 id="setup">クイックスタートアセットを使用する</h2>
-    <p>このクイックスタートで提供されるサンプル動画を使って説明を受けたい場合は、次の手順を行います。</p>
+    <h2 id="setup">クイックスタートアセットの使用</h2>
+    <p>このクイックスタートに付属のサンプルビデオを使用して手順を実行する場合は、次の手順を実行します。</p>
     <ol class="bcls-tasklist-restart">
-      <li><a href="https://files.brightcove.com/sample_animal_videos.zip">サンプルファイルをダウンロードします</a>。</li>
-      <li><strong>アップロードモジュールを使用して</strong>、<a target="_blank" href="https://studio.support.brightcove.com/basics/video-cloud-basics-uploading-videos.html">ビデオを Video Cloud アカウントにアップロードします</a>。</li>
-      <li><strong>Media </strong>モジュールを使用して<a target="_blank" href="https://studio.support.brightcove.com/basics/video-cloud-basics-creating-manual-playlist.html"> Animals プレイリストを作成し</a>、その動画を再生リストに追加します。</li>
-      <li><strong>Players</strong>モジュールを使用して、<strong>GalleryPlayer</strong>と呼ばれる<a target="_blank" href="https://studio.support.brightcove.com/basics/video-cloud-basics-creating-player.html">新しいBrightcovePlayer￼を作成します</a>。</li>
+      <li><a href="https://files.brightcove.com/sample_animal_videos.zip"></a>サンプルファイルをダウンロードします。</li>
+      <li><strong></strong>アップロードモジュールを使用して、Video Cloud <a target="_blank" href="https://studio.support.brightcove.com/basics/video-cloud-basics-uploading-videos.html"></a>アカウントに動画をアップロードします。</li>
+      <li><strong>Media</strong>モジュールを使用して、<a target="_blank" href="https://studio.support.brightcove.com/basics/video-cloud-basics-creating-manual-playlist.html"></a>アニマルプレイリストを作成し、ビデオを再生リストに追加します。</li>
+      <li><strong></strong>プレイヤーモジュールを使用して、<a target="_blank" href="https://studio.support.brightcove.com/basics/video-cloud-basics-creating-player.html"></a><strong>ギャラリープレーヤーと呼ばれる新しいブライトコーブプレーヤーを作成します</strong>。</li>
     </ol>
-    <aside class="bcls-aside bcls-aside--information">注：サンプルファイルのイメージは、後でクイックスタートで使用されます。</aside>
+    <aside class="bcls-aside bcls-aside--information">注:サンプルファイル内のイメージは、クイックスタートで後ほど使用されます。</aside>
   </section>
   <section class="bcls-section">
     <h2>ギャラリーを使用してページ内エクスペリエンスを作成する</h2>
-    <p>Brightcove ギャラリーを使用してページ内エクスペリエンスを作成するには、以下のタスクを実行します。</p>
+    <p> Brightcove Gallery ーを使用してページ内エクスペリエンスを作成するには、以下のタスクを実行します。</p>
     <ul>
-      <li><a href="#account">&nbsp;アカウントを選択してください</a></li>
+      <li><a href="#account">&nbsp;アカウントを選択</a></li>
       <li><a href="#create">新しいページ内エクスペリエンスを作成する</a></li>
-      <li><a href="#layout">エクスペリエンスをカスタマイズする</a></li>
-      <li><a href="#addvideos">体験に動画を追加する</a></li>
+      <li><a href="#layout">エクスペリエンスのカスタマイズ</a></li>
+      <li><a href="#addvideos">エクスペリエンスに動画を追加する</a></li>
       <li><a href="#interactive">ビデオにインタラクティブ機能を追加する</a></li>
-      <li><a href="#style">スタイルのカスタマイズ</a></li>
+      <li><a href="#style">スタイルをカスタマイズする</a></li>
       <li><a href="#settings">エクスペリエンスの設定を構成する</a></li>
       <li><a href="#details">エクスペリエンスの詳細を確認する</a></li>
-      <li><a href="#preview">ページ内エクスペリエンスのプレビューと公開</a></li>
+      <li><a href="#preview">ページ内エクスペリエンスをプレビューして公開する</a></li>
     </ul>
   </section>
   <section class="bcls-section">
-    <h2 id="start">アカウントを選択する</h2>
+    <h2 id="start">アカウントの選択</h2>
     <p>Video Cloud サブスクリプションによっては、複数の Video Cloud アカウントにアクセスできる場合があります。開始する前に、正しいアカウントを使用していることを確認してください。</p>
     <ol class="bcls-tasklist-restart">
-      <li><a href="https://studio.brightcove.com">ビデオクラウドスタジオにログインします</a>。</li>
-      <li>お客様の現在のVideo Cloudアカウント名がページの右上隅に表示されます。複数のアカウントがある場合は、アカウント選択ドロップダウンをクリックし、ページ内エクスペリエンスを作成するアカウントを選択します。このアカウントには、使用したい動画が存在している必要があります。</li>
-      <li>ナビゲーションヘッダーの [ <strong>ギャラリー</strong> ] をクリックします。</li>
+      <li><a href="https://studio.brightcove.com"></a>ビデオクラウドスタジオにログインします。</li>
+      <li>ページの右上隅に現在の Video Cloud アカウント名が表示されます。複数のアカウントがある場合は、アカウント選択ドロップダウンをクリックし、ページ内エクスペリエンスを作成するアカウントを選択します。これは、使用したい動画があるアカウントでもあることに注意してください。</li>
+      <li>クリック<strong>ギャラリー</strong>ナビゲーションヘッダー内。</li>
     </ol>
   </section>
   <section class="bcls-section">
     <h2 id="create">新しいページ内エクスペリエンスの作成</h2>
     <p>新しいページ内エクスペリエンスを作成するには、次の手順に従います。</p>
     <ol class="bcls-tasklist-restart">
-      <li>ページ上部の [ <strong>エクスペリエンス</strong> ] リンクをクリックします。</li>
-      <li>エクスペリエンスを作成していない場合は、プロジェクトなしページが表示されます。[ <strong>インページ</strong> ] の横にある [ <strong>作成</strong> ] をクリックします。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-no-projects.png"/></figure>
-        <p>既存のエクスペリエンスがある場合は、[ <strong>新しいエクスペリエンス</strong> ] をクリックし、<strong>ページ上部の [ページ内</strong> ] リンクをクリックします。</p>
+      <li>ページの上部にある [ <strong>エクスペリエンス]</strong>リンクをクリックします。</li>
+      <li>エクスペリエンスを作成していない場合は、プロジェクトなしページが表示されます。[ <strong>ページ内]</strong>の横にある [ <strong>作成] をクリックします</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-no-projects.png" /></figure>
+        <p>既存のエクスペリエンスがある場合は、[ <strong>新しいエクスペリエンス]</strong>をクリックし、<strong>ページ上部の [ページ内</strong> ] タブをクリックします。</p>
       </li>
-      <li>ページ内エクスペリエンステンプレートの一覧が表示されます。[ <strong>垂直プレイリスト</strong> ] テンプレートを探し、[ <strong>選択</strong> ] をクリックします。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-vertical-playlist-template.png"/></figure>
-        <aside class="bcls-aside bcls-aside--information">注：テンプレートを選択すると、そのテンプレートは変更できません。ページ内エクスペリエンステンプレートの詳細については、「<a href="/experiences/inpage/overview-gallery-page-experience-templates.html">ギャラリーのページ内エクスペリエンステンプレートの概要</a>」トピックを参照してください。</aside>
+      <li>ページ内エクスペリエンステンプレートの一覧が表示されます。<strong></strong>垂直プレイリストテンプレートを見つけて、[ <strong>選択] をクリックします</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-vertical-playlist-template.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">注:テンプレートを選択すると、そのテンプレートは変更できません。ページ内エクスペリエンステンプレートの詳細については、「Gallery <a href="/experiences/inpage/overview-gallery-page-experience-templates.html">インページエクスペリエンステンプレートの概要」</a>トピックを参照してください。</aside>
       </li>
-      <li>&nbsp;<strong>エクスペリエンスタイトル</strong>と<strong>エクスペリエンスの説明</strong>を入力します。[ <strong>レイアウトサイズ</strong> ] で [ <strong>レスポンシブ</strong> ] を選択します。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-project-overview.png"/></figure>
-        <aside class="bcls-aside bcls-aside--information">注：これらの値は後で変更できます。これについては、このクイックスタートで後述します。</aside>
+      <li>&nbsp;<strong></strong><strong>エクスペリエンスのタイトルとエクスペリエンスの説明を入力します</strong>。[ <strong>レイアウトサイズ] で</strong>、[ <strong>レスポンシブ] を選択します</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-project-overview.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">注:これらの値は後で変更できます。これについては、このクイックスタートで後述します。</aside>
       </li>
-      <li>[ <strong>エクスペリエンスの作成</strong> ] をクリックします。</li>
+      <li>[ <strong>エクスペリエンスの作成] をクリックします</strong>。</li>
     </ol>
     <p>レイアウトエディタが開きます。エクスペリエンスのタイトルがページの上部に表示されます。<a href="/experiences/inpage/configuring-details-page-experience.html">タイトルはエクスペリエンスの詳細の一部として変更できます</a>。</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-layout-editor.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-layout-editor.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="layout">エクスペリエンスのカスタマイズ</h2>
@@ -710,293 +94,135 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>プレイ中</strong> -動画が再生されているときのエクスペリエンスの表示方法</li>
       <li><strong>プレイ後</strong> -ビデオの再生後にエクスペリエンスがどのように表示されるか</li>
     </ul>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-layout-states-menu.png"/></figure>
-    <p>異なる状態を編集するには、ステートをクリックし、必要に応じてコンポーネントをエクスペリエンスに追加します。詳細については、「<a href="/experiences/inpage/customizing-page-experience.html">ページ内エクスペリエンスのカスタマイズ</a>」を参照してください。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-layout-states-menu.png" /></figure>
+    <p>異なる状態を編集するには、ステートをクリックし、必要に応じてコンポーネントをエクスペリエンスに追加します。詳細については、「<a href="/experiences/inpage/customizing-page-experience.html">ページ内エクスペリエンスのカスタマイズ」を参照してください</a>。</p>
     <p>ページ内エクスペリエンスにオブジェクトを追加するには、次の手順に従います。</p>
     <ol class="bcls-tasklist-restart">
-      <li>左側のナビゲーションで [ <strong>レイアウト</strong> ] をクリックします。</li>
-      <li><strong>再生前 (PLAY </strong> ) 状態をクリックします。プラスアイコン（<img alt="" src="/assets/images/get-started/node16796-plus-icon.png"/>）は、コンポーネントをエクスペリエンスに追加できる場所を示します。エクスペリエンスの上部にあるプラスアイコンをクリックします。コンポーネントピッカーが開きます。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-select-component.png"/></figure>
+      <li>クリック<strong>レイアウト</strong>左側のナビゲーションで。</li>
+      <li>[ <strong>プレイ前]</strong>状態をクリックします。プラスアイコン（<img alt="" src="/assets/images/get-started/node16796-plus-icon.png" />）コンポーネントをエクスペリエンスに追加できる場所を示します。エクスペリエンスの上部にあるプラスアイコンをクリックします。コンポーネントピッカーが開きます。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-select-component.png" /></figure>
       </li>
-      <li>[ <strong>イメージ</strong> ] コンポーネントをクリックします。<strong>参照リンクをクリックし</strong>、エクスペリエンスのヘッダーとして使用する画像を選択します。クイックスタートサンプルファイルには、使用できるイメージが含まれていることに注意してください。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-add-image.png"/></figure>
+      <li><strong>Image</strong>コンポーネントをクリックします。<strong></strong>参照リンクをクリックし、エクスペリエンスのヘッダーとして使用する画像を選択します。クイックスタートサンプルファイルには、使用できるイメージが含まれていることに注意してください。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-add-image.png" /></figure>
       </li>
       <li>[<strong>保存</strong>]をクリックします。画像はエクスペリエンスに表示されます。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-image-added.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-image-added.png" /></figure>
       </li>
-      <li>画像コンポーネントの上にあるプラスアイコンをクリックし、<strong>テキストコンポーネントをエクスペリエンスに追加します</strong>。テキストを入力し、[ <strong>保存</strong> ] をクリックします。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-add-text.png"/></figure>
+      <li>画像コンポーネントの上にあるプラスアイコンをクリックし、<strong></strong>テキストコンポーネントをエクスペリエンスに追加します。テキストを入力し、[ <strong>保存] をクリックします</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-add-text.png" /></figure>
       </li>
       <li>エクスペリエンスに画像とテキストが表示されることを確認します。</li>
     </ol>
     <p>コンポーネントプロパティを編集したり、コンポーネントを削除するには、コンポーネントの上にカーソルを置き、編集アイコンまたは削除アイコンをクリックします。</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-edit-delete-icon.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-edit-delete-icon.png" /></figure>
   </section>
   <section class="bcls-section">
     <h2 id="addvideos">エクスペリエンスに動画を追加する</h2>
-    <p>選択したテンプレートによっては、エクスペリエンスに一度に 1 つまたは複数のビデオが表示される場合があります。動画はエクスペリエンスに手動で追加したり、プレイリストを選択したり、参照 ID を提供したりできます。ページ内エクスペリエンスに動画を追加する方法の詳細については、「<a href="/experiences/inpage/adding-videos-page-experience.html">ページ内エクスペリエンスに動画を追加する</a>」を参照してください。</p>
+    <p>選択したテンプレートによっては、エクスペリエンスが一度に 1 つ以上の動画を表示することがあります。動画はエクスペリエンスに手動で追加したり、プレイリストを選択したり、参照 ID を提供したりできます。ページ内エクスペリエンスに動画を追加する方法の詳細については、「<a href="/experiences/inpage/adding-videos-page-experience.html">ページ内エクスペリエンスに動画を追加する」を参照してください</a>。</p>
     <p>ページ内エクスペリエンスに動画を追加するには、次の手順に従います。</p>
     <ol class="bcls-tasklist-restart">
-      <li>左側のナビゲーションの [ <strong>動画</strong> ] アイコンをクリックします。</li>
-      <li>[ <strong>ビデオを追加</strong> ] をクリックします。</li>
-      <li>追加するビデオを手動で選択するには、<strong> [ビデオを選択</strong> ] の [ <strong>方法</strong> ] を選択します。<strong>または</strong>、[ <strong>プレイリストの選択] の [</strong><strong>方法</strong> ] を選択し、<strong>サンプル動画で作成した動物プレイリスト</strong>。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-select-playlist.png"/></figure>
+      <li>左側のナビゲーションの [ <strong>VIDEOS]</strong>アイコンをクリックします。</li>
+      <li>[ <strong>動画を追加] をクリックします</strong>。</li>
+      <li><strong></strong><strong></strong><strong>動画の選択方法を選択して追加する動画を手動で選択するか</strong>、<strong>方法を選択してください</strong><strong></strong>プレイリストを選択し、<strong></strong>サンプル動画で作成したアニマルズのプレイリストを参照して選択します。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-select-playlist.png" /></figure>
       </li>
       <li>[<strong>選択</strong>]をクリックします。ビデオのリストが表示されます。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-video-list.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-video-list.png" /></figure>
       </li>
     </ol>
   </section>
   <section class="bcls-section">
     <h2 id="interactive">ビデオへのインタラクティブ性の追加</h2>
-    <p>リンクとカードのやりとりは、動画に追加できます。インタラクションは、ビデオの再生と同時に表示されます。エクスペリエンスにインタラクティブ機能を追加する方法の詳細については、「<a href="/experiences/inpage/adding-interactions-page-experience.html">ページ内エクスペリエンスへのインタラクションの追加</a>」を参照してください。</p>
+    <p>リンクとカードのやりとりは、動画に追加できます。インタラクションは、ビデオの再生と同時に表示されます。エクスペリエンスにインタラクティブ機能を追加する方法の詳細については、「<a href="/experiences/inpage/adding-interactions-page-experience.html">ページ内エクスペリエンスへのインタラクションの追加」を参照してください</a>。</p>
     <p>ビデオのインタラクティブ性を設定するには、次の手順に従います。</p>
     <ol class="bcls-tasklist-restart">
-      <li>左側のナビゲーションの [ <strong>動画</strong> ] アイコンをクリックします。</li>
-      <li>インタラクティブ機能を追加するビデオを選択し、[ <strong>アクション</strong> ] 列のリンクアイコン ( <img alt="" src="/assets/images/get-started/node16796-link-icon.png"/> ) をクリックします。</li>
-      <li><strong>リンクテキストとリンク</strong><strong> URL </strong>を追加します。プレビュープレーヤーには、リンクのプレビューが表示されます。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-link-text-url.png"/></figure>
+      <li>左側のナビゲーションの [ <strong>VIDEOS]</strong>アイコンをクリックします。</li>
+      <li>インタラクティブ機能を追加するビデオを選択し、リンクアイコンをクリックします（<img alt="" src="/assets/images/get-started/node16796-link-icon.png" />) の [ <strong>アクション</strong> ] 列に表示されます。</li>
+      <li><strong></strong><strong>リンクテキストとリンク URL を追加します</strong>。プレビュープレーヤーには、リンクのプレビューが表示されます。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-link-text-url.png" /></figure>
       </li>
-      <li>[ <strong>構成</strong> ] リンクをクリックします。</li>
-      <li>[ <strong>% への切り替え</strong> ] リンクをクリックします。<strong>開始時間を</strong>、ビデオの 50% ポイントに設定します。</li>
-      <li>[ <strong>再生時間</strong> ] で、[ <strong>動画が終了するまで] </strong>をオンにします。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-configure-link.png"/></figure>
-        <aside class="bcls-aside bcls-aside--information">注：プレビュープレーヤーの下のスライダーを使用して、リンクの開始時間と継続時間を設定することもできます。</aside>
+      <li>[ <strong>構成]</strong>リンクをクリックします。</li>
+      <li>[% <strong>に切り替え]</strong>リンクをクリックします。[ <strong>開始時間]</strong>をビデオの 50% ポイントに設定します。</li>
+      <li>[ <strong>デュレーション]</strong>で、[ <strong>ビデオが終了するまで] をオンにします</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-configure-link.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">注:プレビュープレーヤーの下のスライダーを使用して、リンクの開始時間と継続時間を設定することもできます。</aside>
       </li>
-      <li>[ <strong>設計</strong> ] リンクをクリックします。プレイヤーの右下に表示されるようにリンクを設定します。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-link-design.png"/></figure>
+      <li>[ <strong>デザイン]</strong>リンクをクリックします。プレイヤーの右下に表示されるようにリンクを設定します。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-link-design.png" /></figure>
       </li>
       <li>[<strong>保存</strong>]をクリックします。ビデオに設定されているすべてのインタラクションのリストが表示されます。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-interactions.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-interactions.png" /></figure>
       </li>
-      <li>ダイアログのタイトルで [ <strong> X </strong> ] をクリックして、対話型エディタを閉じます。</li>
+      <li>クリック<strong>NS</strong>ダイアログタイトルで、インタラクティブエディタを閉じます。</li>
     </ol>
-    <p>インタラクティブ機能を持つビデオは、[ <strong>インタラクティビティ</strong> ] 列に、設定されているインタラクションの種類を示すアイコンが表示されます。</p>
+    <p>インタラクティブ機能のあるビデオは、[ <strong>インタラクティビティ</strong> ] 列に構成されたインタラクションのタイプを示すアイコンを表示します。</p>
   </section>
   <section class="bcls-section">
     <h2 id="style">スタイルのカスタマイズ</h2>
-    <p>このスタイルは、エクスペリエンスで使用されるフォントと色を制御します。スタイルのカスタマイズの詳細については、「<a href="/experiences/inpage/customizing-style-page-experience.html">ページ内エクスペリエンスのスタイルのカスタマイズ</a>」を参照してください。</p>
+    <p>このスタイルは、エクスペリエンスで使用されるフォントと色を制御します。スタイルのカスタマイズの詳細については、「<a href="/experiences/inpage/customizing-style-page-experience.html">ページ内エクスペリエンスのスタイルのカスタマイズ」を参照してください</a>。</p>
     <p>スタイルを設定するには、次の手順を実行します。</p>
     <ol class="bcls-tasklist-restart">
-      <li>左側のナビゲーションで [ <strong>スタイル</strong> ] をクリックします。</li>
-      <li><strong>グローバルスタイルを見つけます</strong>。[ <strong>文字の色</strong> ] 円をクリックし、文字の色を赤に変更します。以前にエクスペリエンスに追加したテキストコンポーネントが赤に変わります。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-text-color.png"/></figure>
+      <li>クリック<strong>スタイル</strong>左側のナビゲーションで。</li>
+      <li><strong></strong>グローバルスタイルを見つけます。[ <strong>テキストの色]</strong>の円をクリックし、文字の色を [赤] に変更します。以前にエクスペリエンスに追加したテキストコンポーネントが赤に変わります。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-text-color.png" /></figure>
       </li>
-      <li>[ <strong> X </strong> ] をクリックして、カラーピッカーを閉じます。</li>
-      <li><strong>ビデオタイトルスタイルを見つけます</strong>。[ <strong>文字の色</strong> ] 円をクリックし、文字の色を青に変更します。[ <strong> X </strong> ] をクリックして、カラーピッカーを閉じます。</li>
-      <li>左側のナビゲーションを一番上にスクロールし、[ <strong>レイアウトに戻る</strong> ] リンクをクリックします。</li>
+      <li>[ <strong>X</strong> ] をクリックして、カラーピッカーを閉じます。</li>
+      <li><strong></strong>ビデオタイトルスタイルを見つけます。[ <strong>テキストの色]</strong>の円をクリックし、文字の色を [青] に変更します。[ <strong>X</strong> ] をクリックして、カラーピッカーを閉じます。</li>
+      <li>左側のナビゲーションを一番上にスクロールし、[ <strong>レイアウトに戻る]</strong>リンクをクリックします。</li>
     </ol>
   </section>
   <section class="bcls-section">
     <h2 id="settings">エクスペリエンス設定の構成</h2>
-    <p>エクスペリエンス設定は、使用するプレイヤー、ソーシャル設定、その他の設定など、エクスペリエンスのさまざまな側面を制御します。設定のカスタマイズの詳細については、「<a href="/experiences/inpage/configuring-settings-page-experience.html">ページ内エクスペリエンスの設定を構成する</a>」を参照してください。</p>
+    <p>エクスペリエンス設定は、使用するプレイヤー、ソーシャル設定、その他の設定など、エクスペリエンスのさまざまな側面を制御します。設定のカスタマイズの詳細については、「<a href="/experiences/inpage/configuring-settings-page-experience.html">ページ内エクスペリエンスの設定を構成する」を参照してください</a>。</p>
     <p>エクスペリエンスの設定を構成するには、次の手順を実行します。</p>
     <ol class="bcls-tasklist-restart">
-      <li>左側のナビゲーションで [ <strong>設定] [&gt; プレーヤー</strong> ] をクリックします。</li>
-      <li>[ <strong>利用可能なプレーヤー</strong> ] ドロップダウンリストを使用して、<strong>以前に作成したギャラリープレーヤーを選択します</strong>。これは、ページ内エクスペリエンスで使用されるプレーヤーです。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-select-player.png"/></figure>
+      <li>クリック<strong>設定&gt;プレーヤー</strong>左側のナビゲーションで。</li>
+      <li>[ <strong>利用可能なプレーヤー]</strong>ドロップダウンリストを使用して、<strong></strong>前に作成したギャラリープレーヤーを選択します。これは、ページ内エクスペリエンスで使用されるプレーヤーです。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-select-player.png" /></figure>
       </li>
-      <li>[ <strong>次のビデオに自動的に進める</strong> ] オプションを選択します。</li>
-      <li>[<strong>保存</strong>]をクリックします。</li>
-      <li>左側のナビゲーションで [ <strong>設定] [&gt; ソーシャル</strong> ] をクリックします。</li>
+      <li>[ <strong>次のビデオに自動的に進む</strong> ] オプションをオンにします。</li>
+      <li>[ <strong>保存] をクリックします</strong>。</li>
+      <li>クリック<strong>設定&gt;ソーシャル</strong>左側のナビゲーションで。</li>
       <li>ソーシャル共有オプションの表示方法を選択します。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-social-display.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-social-display.png" /></figure>
       </li>
       <li>動画を共有できるソーシャルメディアサイトを選択します。サイトによっては、カスタムメッセージを投稿することもできます。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-social-options.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-social-options.png" /></figure>
       </li>
       <li>[<strong>保存</strong>]をクリックします。</li>
     </ol>
   </section>
   <section class="bcls-section">
     <h2 id="details">エクスペリエンスの詳細を確認する</h2>
-    <p>エクスペリエンスの詳細には、エクスペリエンスのタイトルとサイズ設定が構成される場所です。エクスペリエンスの詳細のカスタマイズの詳細については、「<a href="/experiences/inpage/configuring-details-page-experience.html">ページ内エクスペリエンスの詳細の設定</a>」を参照してください。</p>
+    <p>エクスペリエンスの詳細には、エクスペリエンスのタイトルとサイズ設定が構成される場所です。エクスペリエンスの詳細のカスタマイズの詳細については、「<a href="/experiences/inpage/configuring-details-page-experience.html">ページ内エクスペリエンスの詳細の設定」を参照してください</a>。</p>
     <p>エクスペリエンスの詳細を構成するには、次の手順を実行します。</p>
     <ol class="bcls-tasklist-restart">
-      <li>左側のナビゲーションで [ <strong> OVERVIEW </strong> ] をクリックします。</li>
+      <li>クリック<strong>概要</strong>左側のナビゲーションで。</li>
       <li>必要に応じて、エクスペリエンスのタイトルと説明を編集します。</li>
-      <li>[ <strong>レイアウトサイズ] </strong>が [ <strong>レスポンシブ</strong> ] に設定されていることを確認します。レイアウトサイズが [レスポンシブ] に設定されている場合、そのコンテナがページに収まるようにサイズが変更されます。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-overview.png"/></figure>
+      <li>[ <strong>レイアウトサイズ]</strong>が [ <strong>レスポンシブ] に設定されていることを確認します</strong>。レイアウトサイズが [レスポンシブ] に設定されている場合、そのコンテナがページに収まるようにサイズが変更されます。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-overview.png" /></figure>
       </li>
-      <li>変更を加えた場合は、[ <strong>保存</strong> ] をクリックします。</li>
+      <li>変更を加えた場合は、[ <strong>保存] をクリックします</strong>。</li>
     </ol>
   </section>
   <section class="bcls-section">
     <h2 id="preview">ページ内エクスペリエンスのプレビューと公開</h2>
-    <p>ページ内エクスペリエンスをプレビューすると、Gallery インターフェイス内で表示しなくても、エクスペリエンスがどのように表示されるかを確認できます。ページ内エクスペリエンスを公開すると、Web ページ内にエクスペリエンスを表示するために必要な埋め込みコードが生成されます。ページ内エクスペリエンスのプレビューと発行の詳細については、「<a href="/experiences/inpage/previewing-and-publishing-page-experience.html">ページ内エクスペリエンスのプレビューと公開</a>」を参照してください。</p>
+    <p>ページ内エクスペリエンスをプレビューすると、Gallery インターフェイス内で表示しなくても、エクスペリエンスがどのように表示されるかを確認できます。ページ内エクスペリエンスを公開すると、Web ページ内にエクスペリエンスを表示するために必要な埋め込みコードが生成されます。ページ内エクスペリエンスのプレビューと発行の詳細については、「<a href="/experiences/inpage/previewing-and-publishing-page-experience.html">ページ内エクスペリエンスのプレビューと公開」を参照してください</a>。</p>
     <ol class="bcls-tasklist-restart">
-      <li>ページ内エクスペリエンスをプレビューするには、エクスペリエンスを編集し、[ <strong>プレビュー</strong> ] をクリックします。</li>
+      <li>ページ内エクスペリエンスをプレビューするには、エクスペリエンスを編集し、[ <strong>プレビュー] をクリックします</strong>。</li>
       <li>デスクトッププレビューが新しいブラウザタブで開きます。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-desktop-preview.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-desktop-preview.png" /></figure>
       </li>
       <li>左上隅のドロップダウンリストを使用して、さまざまなデバイスの種類やさまざまなエクスペリエンスの状態でのエクスペリエンスをプレビューできます。モバイルプレビューが下に表示されます。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-mobile-preview.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-mobile-preview.png" /></figure>
       </li>
-      <li>ページ内エクスペリエンスを公開するには、[ <strong>公開と埋め込み</strong> ] をクリックします。</li>
-      <li>[ <strong>発行</strong> ] または [ <strong>変更を公開</strong> ] をクリックします。</li>
-      <li>公開プロセスが開始され、完了すると、<strong>公開ステータスが [</strong><strong>このエクスペリエンスは最新です</strong> ] に変わります。&nbsp;エクスペリエンスが更新されるまで数分かかる場合があります。
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-published.png"/></figure>
+      <li>ページ内エクスペリエンスを公開するには、[ <strong>公開して埋め込む] をクリックします</strong>。</li>
+      <li>[ <strong>公開]</strong>または [ <strong>変更を公開] をクリックします</strong>。</li>
+      <li>公開プロセスが開始され、完了すると、[ <strong>公開ステータス]</strong>が [ <strong>このエクスペリエンスは最新です] に変わります</strong>。&nbsp;エクスペリエンスが更新されるまで数分かかる場合があります。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/get-started/node16796-published.png" /></figure>
       </li>
     </ol>
-    <p>ページ内エクスペリエンスが公開された後、<strong>共有可能な URL </strong>を他のユーザーと共有して、エクスペリエンスをプレビューできます。埋め込みコードを使用して、ページ内エクスペリエンスを既存の Web ページに埋め込むことができます。</p>
-    <aside class="bcls-aside bcls-aside--information">注：ページ内エクスペリエンスに変更を加えると、エクスペリエンスの再公開が必要になります。<strong>いいえ</strong><strong></strong>既存の埋め込みコードを変更する必要はありませんただし、レイアウトサイズを固定サイズからレスポンシブサイズに、またはその逆に変更する場合を除きます。</aside>
-    <aside class="bcls-aside bcls-aside--information">注：エクスペリエンスのサイズが [ <strong>レスポンシブ</strong> ] に設定されている場合は、[ <strong>推奨</strong> ] 埋め込みコードを使用する必要があります。<strong>JavaScript </strong>埋め込みコードは応答しません。</aside>
+    <p>ページ内エクスペリエンスが公開された後、<strong></strong>共有可能 URL を他のユーザーと共有して、エクスペリエンスをプレビューできます。埋め込みコードを使用して、ページ内エクスペリエンスを既存の Web ページに埋め込むことができます。</p>
+    <aside class="bcls-aside bcls-aside--information">注:ページ内エクスペリエンスに変更を加えると、エクスペリエンスの再公開が必要になります。<strong></strong>レイアウトサイズを固定サイズからレスポンシブサイズに変更するか、<strong>またはその逆の場合を除き、既存の埋め込みコードを変更する必要はありません。</strong></aside><aside class="bcls-aside bcls-aside--information">注:エクスペリエンスのサイズが [ <strong>レスポンシブ] に設定されている場合は</strong>、<strong></strong>推奨埋め込みコードを使用する必要があります。NS <strong> JavaScriptなし</strong>埋め込みコードが応答しません。</aside>
   </section>
 </article>
-
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">ページコンテンツ</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Brightcove サポート</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://status.brightcove.com">システムステータス</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">サポートへのお問い合わせ</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">ドキュメンテーション</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>トレーニング</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">オンラインコース</a>
-          </li>
-          <li>
-            <a href="https://studio.support.brightcove.com/training/register-training.html">コースに登録する</a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Brightcove University</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">Brightcove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">お問合せ</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
-            </td>
-            <td><a href="https://www.brightcove.com/en/legal/privacy">プライバシー</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">利用規約</a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-
-</div>
-</div>
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>

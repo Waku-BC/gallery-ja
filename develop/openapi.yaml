@@ -1082,7 +1082,7 @@ components:
         timezone:
           type: string
           description: Timezone of the event
-        title:
+        title: 
           type: string
           description: Event title used in the calendar event
         description:
@@ -1108,7 +1108,7 @@ components:
             - button
             - icon
           description: How to display event sharing
-        title:
+        title: 
           type: string
           description: Title of the event used when it is shared
         description:
@@ -1594,7 +1594,7 @@ components:
           type: string
           description: |-
             The URL that a hyperlink points to. Used for `Link` and `Card` type interactions.
-        title:
+        title: 
           type: string
           description: |-
             The title for a card. Used for`Card` type interactions.
@@ -1679,7 +1679,7 @@ components:
         name:
           type: string
           description: View ID
-        title:
+        title: 
           type: string
           description: View display name
         isPlaybackView:
@@ -1697,7 +1697,7 @@ components:
         name:
           type: string
           description: Layout ID
-        title:
+        title: 
           type: string
           description: Layout display name
         categories:
@@ -1713,7 +1713,7 @@ components:
         name:
           type: string
           description: Template layout category ID
-        title:
+        title: 
           type: string
           description: Template layout category display name
         options:
@@ -1729,7 +1729,7 @@ components:
         name:
           type: string
           description: Template layout option ID
-        title:
+        title: 
           type: string
           description: Template layout option display name
         image:
@@ -1801,7 +1801,7 @@ components:
           allOf:
             - $ref: '#/components/schemas/Style'
           description: Video information style overrides
-        videoTitle:
+        videotitle: 
           allOf:
             - $ref: '#/components/schemas/Style'
           description: Video title style overrides
@@ -1813,7 +1813,7 @@ components:
           allOf:
             - $ref: '#/components/schemas/Style'
           description: Overlay video information style overrides
-        overlayTitle:
+        overlaytitle: 
           allOf:
             - $ref: '#/components/schemas/Style'
           description: Overlay video title style overrides

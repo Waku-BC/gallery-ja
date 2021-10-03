@@ -1,16 +1,26 @@
-﻿<!doctype html>
-<html lang="ja">
+<!doctype html>
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="このトピックでは、Brightcove のページ内エクスペリエンスを CMS に統合するためのガイドラインを示します。">
+  <meta name="description" content="のトピックでは、Brightcove ページ内エクスペリエンスを CMS に統合するためのガイドラインについて説明します。">
   
-  <title>CMS へのページ内エクスペリエンスの埋め込み</title>
+  <title>へのページ内エクスペリエンスの埋め込みこ CMS </title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="manifest" href="/site.webmanifest"> 
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.woff" type="font/woff">
   <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
@@ -18,589 +28,385 @@
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
   <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.DataLayer = window.DataLayer || []; 関数{dataLayer.push(arguments);} gtag ('js', new Date ()); gtag ('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body class="body">
-
-<header>
+ <header>
   <div class="div-header">
-    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">Brightcove ギャラリー<sup>™</sup></span></a>
+    <a href="/"><span class="product-logo" style="font-size:32px;max-width:400px;font-weight:normal;color:rgb(8, 8, 140);"> Brightcove Gallery ー<sup>&trade;</sup></span></a>
 <!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">言語の選択</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+<select onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
 
-<script>
+<script translate="no">
 /* <![CDATA[ */
 function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
 /* ]]> */
 </script>
 
-    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-      <option value="">Brightcove のその他のドキュメント</option>
-      
-        
-          <option value="https://support.brightcove.com">ドキュメントホーム</option>
-        
-      
-        
-          <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
-        
-      
-        
-          <option value="https://beacon.support.brightcove.com">Brightcove Beacon</option>
-        
-      
-        
-          <option value="https://campaign.support.brightcove.com">Brightcove キャンペーン</option>
-        
-      
-        
-          <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-        
-      
-        
-          <option value="https://live.support.brightcove.com">Brightcove Live</option>
-        
-      
-        
-          <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-        
-      
-        
-          <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-        
-      
-        
-          <option value="https://social.support.brightcove.com">Brightcove ソーシャル</option>
-        
-      
-        
-          <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-        
-      
-        
-          <option value="https://player.support.brightcove.com">Brightcove のプレーヤー開発</option>
-        
-      
-        
-          <option value="https://apis.support.brightcove.com">Video CloudプラットフォームAPI</option>
-        
-      
-        
-          <option value="https://sdks.support.brightcove.com">ビデオクラウドデバイス SDK</option>
-        
-      
-        
-          <option value="https://integrations.support.brightcove.com">統合および CMS コネクタ</option>
-        
-      
-        
-          <option value="https://general.support.brightcove.com">ビデオクラウドの一般情報</option>
-        
-      
-        
-          <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-        
-      
-    </select>
 
 
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="サポート"/> サポートへのお問い合わせ</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="システムステータス"/> システムステータス</a></span> <br/>
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><i data-feather="help-circle"></i> サポートに連絡する</a><span style="vertical-align: middle;margin-left:1em;margin-right:1em;">| </span><a href="https://status.brightcove.com/"><i data-feather="cloud"></i> システムステータス</a></span>
+    <br>
     
   </div>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb arr-right">
       
-      <li class="breadcrumb-item"><a href="/">ホーム</a></li>
+      <li class="breadcrumb-item first-item"><a href="/">ホーム</a></li>
+        
+      <li class="breadcrumb-item"><a href="/develop/">Develop</a></li>
       
-      
-      
-      <li class="breadcrumb-item"><a href="/develop/">開発する</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">CMS へのページ内エクスペリエンスの埋め込み</li>
+      <li class="breadcrumb-item active" aria-current="page">へのページ内エクスペリエンスの埋め込みこ CMS </li>
     </ol>
   </nav>
-</header>
-<div class="container">
+</header> <div class="container">
     <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Brightcove のその他のドキュメント</option>
-          
-            
-              <option value="https://support.brightcove.com">ドキュメントホーム</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Brightcove ビーコン</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Brightcove キャンペーン</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove ・ライブ</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove ギャラリー</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove ソーシャル</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Brightcove のプレーヤー開発</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">Video CloudプラットフォームAPI</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">ビデオクラウドデバイス SDK</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">統合および CMS コネクタ</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">ビデオクラウドの一般情報</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
+      <div class="col-sm-3 left-side-bar">
+				<select id="site_select" class="bcls-select" style="margin-left: 1rem;">
+					<option value="">Brightcoveのその他のドキュメント</option>
+					 
+							<option value="https://support.brightcove.com">ドキュメンテーションホーム</option>
+						  
+							<option value="">-ビデオクラウド-</option>
+						  
+							<option value="https://studio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドスタジオ</option>
+						  
+							<option value="https://player.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブプレイヤー開発</option>
+						  
+							<option value="https://apis.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドプラットフォームAPI</option>
+						  
+							<option value="https://sdks.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドデバイスSDK</option>
+						  
+							<option value="https://integrations.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;統合とCMSコネクタ</option>
+						  
+							<option value="https://general.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ビデオクラウドの一般情報</option>
+						  
+							<option value="">-ビデオエッセンシャル-</option>
+						  
+							<option value="https://beacon.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブビーコン</option>
+						  
+							<option value="https://live.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブライブ</option>
+						  
+							<option value="https://zencoder.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp; Zencoder</option>
+						  
+							<option value="">-ビデオクラウドアドオン-</option>
+						  
+							<option value="https://campaign.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブキャンペーン</option>
+						  
+							<option value="https://engage.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブエンゲージ</option>
+						  
+							<option value="https://gallery.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp; Brightcove Gallery ー</option>
+						  
+							<option value="https://studio.support.brightcove.com/social/index.html">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブソーシャル</option>
+						  
+							<option value="https://ssai.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;ブライトコーブSSAI</option>
+						 
+				</select>
         <nav class="sidenav" id="side_nav">
-          
-            
+           
             <h5><a href="/index.html">ホーム</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/get-started/index.html">はじめに<strong> + </strong></a></h5>
+              
+              <h5 class="submenu-header"><a href="/get-started/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;入門編</a></h5>
               <ul class="sidenav-submenu" style="display:none;">
-                
-                  
+                 
                     <li><a href="/get-started/step-step-creating-and-publishing-portal-experience.html">ポータルエクスペリエンスの作成</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/step-step-creating-and-publishing-page-experience.html">ページ内エクスペリエンスの作成</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/creating-and-managing-gallery-experiences.html">エクスペリエンスの作成と管理</a></li>
-                  
-                
-                  
-                    <li><a href="/training/gallery-training-videos.html">ギャラリー・トレーニング・ビデオ</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-gallery.html">Brightcove ギャラリーの入門</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-gallery-experiences.html">ギャラリーエクスペリエンスの概要</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-introduction-gallery.html">トレーニング:ギャラリーの紹介</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">トレーニング:ポータル・エクスペリエンスの構築</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">トレーニング:ページ内エクスペリエンスの構築</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/experiences/index.html">エクスペリエンス <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/portal/index.html">ポータル<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/portal/adding-video-cloud-videos-portal-experience.html">ビデオクラウド動画を追加する</a></li>
-                        
-                        <li><a href="/experiences/portal/adding-videos-portal-experience.html">ビデオを追加する</a></li>
-                        
-                        <li><a href="/experiences/portal/adding-youtube-videos-portal-experience.html">YouTube 動画を追加する</a></li>
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">カスタムドメインの割り当て</a></li>
-                        
-                        <li><a href="/experiences/portal/changing-player-layout-portal-experience.html">プレーヤーのレイアウトを変更する</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-calls-action-portal-experience.html">アクションへの呼び出しの設定</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-search-engine-optimization-settings-portal-experience.html">SEO設定の構成</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-details-portal-experience.html">エクスペリエンスの詳細の設定</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-third-party-tracking-portal-experience.html">サードパーティトラッキングの設定</a></li>
-                        
-                        <li><a href="/experiences/portal/controlling-access-portal-experience.html">アクセスの制御</a></li>
-                        
-                        <li><a href="/experiences/portal/overview-creating-editing-and-publishing-portal-experiences.html">ポータルエクスペリエンスの作成、編集、公開</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-appearance-and-behavior-portal-experience.html">外観と動作のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-catalogue-template-settings.html">カタログテンプレート設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-chronicle-template-settings.html">クロニクルテンプレート設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-content-portal-experience-pages.html">ポータル・ページのコンテンツのカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-marquee-template-settings.html">マーキーテンプレート設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-player-and-lead-form-settings-portal-experience.html">プレーヤーおよびリードフォーム設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-site-configuration-portal-experience.html">サイト構成のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-site-features-portal-experience.html">サイト機能のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-social-settings-portal-experience.html">ソーシャル設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-style-portal-experience.html">スタイルのカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-video-and-playback-settings-portal-experience.html">ビデオと再生設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-video-settings-portal-experience.html">ビデオ設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/downloading-videos-portal-experience.html">ビデオのダウンロード</a></li>
-                        
-                        <li><a href="/experiences/portal/exporting-gallery-lead-data.html">ギャラリーリードデータのエクスポート</a></li>
-                        
-                        <li><a href="/experiences/portal/indexing-gallery-portal-experience.html">ポータルエクスペリエンスのインデックス作成</a></li>
-                        
-                        <li><a href="/experiences/portal/overview-gallery-portal-templates.html">ギャラリーポータルのテンプレートの概要</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">プレビューと公開</a></li>
-                        
-                        <li><a href="/experiences/portal/updating-gallery-templates.html">ギャラリーテンプレートの更新</a></li>
-                        
-                        <li><a href="/experiences/portal/using-lead-form-portal-experience.html">リードフォームの使用</a></li>
-                        
-                        <li><a href="/experiences/portal/using-custom-fonts-portal-experience.html">カスタムフォントを使用する</a></li>
-                        
-                        <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">サイトエディタを使用したエクスペリエンスのカスタマイズ</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/inpage/index.html">ページ内<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/inpage/adding-components-page-experience.html">コンポーネントの追加</a></li>
-                        
-                        <li><a href="/experiences/inpage/adding-interactions-page-experience.html">インタラクションの追加</a></li>
-                        
-                        <li><a href="/experiences/inpage/adding-videos-page-experience.html">ビデオを追加する</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-companion-components-page-experience.html">コンパニオンコンポーネントの構成</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-details-page-experience.html">エクスペリエンスの詳細の設定</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-settings-page-experience.html">エクスペリエンスの設定の構成</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-video-downloads-page-experience.html">ビデオダウンロードの設定</a></li>
-                        
-                        <li><a href="/experiences/inpage/creating-custom-themes-page-experiences.html">カスタムテーマの作成</a></li>
-                        
-                        <li><a href="/experiences/inpage/customizing-page-experience.html">ページ内エクスペリエンスのカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/inpage/customizing-style-page-experience.html">スタイルのカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/inpage/overview-gallery-page-experience-templates.html">ページ内エクスペリエンステンプレートの概要</a></li>
-                        
-                        <li><a href="/experiences/inpage/overview-creating-editing-and-publishing-page-experiences.html">概要:ページ内エクスペリエンスの作成と公開</a></li>
-                        
-                        <li><a href="/experiences/inpage/previewing-and-publishing-page-experience.html">プレビューと公開</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-analytics.html">アナリティクスの確認</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-calls-action-analytics.html">行動を促す分析の確認</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-analytics-dashboard.html">アナリティクスダッシュボードの確認</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-video-analytics.html">動画分析の確認</a></li>
-                        
-                        <li><a href="/experiences/portal/updating-gallery-templates.html">ギャラリーテンプレートの更新</a></li>
-                        
-                        <li><a href="/experiences/inpage/using-dynamic-video-overrides-page-experience.html">ダイナミックビデオオーバーライドを使用する</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/live/index.html">ライブイベント<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/live/adding-pigeonhole-live-event-page-experience.html">ライブインページにPigeonholeを追加する</a></li>
-                        
-                        <li><a href="/experiences/live/adding-pigeonhole-live-event-portal-experience.html">ライブポータルへのピジョンホールの追加</a></li>
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">カスタムドメインの割り当て</a></li>
-                        
-                        <li><a href="/experiences/portal/controlling-access-portal-experience.html">アクセスの制御</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-page-experience.html">ライブイベントインページエクスペリエンスの作成</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-portal-experience.html">ライブイベントポータルエクスペリエンスの作成</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-state-portal-event-experience.html">ライブイベント状態の作成</a></li>
-                        
-                        <li><a href="/experiences/live/creating-post-event-state-portal-event-experience.html">イベント後の状態の作成</a></li>
-                        
-                        <li><a href="/experiences/live/creating-pre-event-state-portal-event-experience.html">イベント前の状態の作成</a></li>
-                        
-                        <li><a href="/experiences/live/customizing-live-event-portal-settings.html">ライブイベントポータルの設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">プレビューと公開</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/landing/index.html">ランディングページ<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">カスタムドメインの割り当て</a></li>
-                        
-                        <li><a href="/experiences/landing/creating-landing-page-experience.html">ランディングページエクスペリエンスの作成</a></li>
-                        
-                        <li><a href="/experiences/portal/exporting-gallery-lead-data.html">ギャラリーリードデータのエクスポート</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">プレビューと公開</a></li>
-                        
-                        <li><a href="/experiences/portal/using-lead-form-portal-experience.html">リードフォームの使用</a></li>
-                        
-                        <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">サイトエディタを使用したエクスペリエンスのカスタマイズ</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/general/index.html">一般<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/general/gallery-system-requirements.html">ギャラリーのシステム要件</a></li>
-                  
-                
-                  
-                    <li><a href="/general/troubleshooting-brightcove-gallery-issues.html">Brightcove ギャラリーの問題のトラブルシューティング</a></li>
-                  
-                
-                  
-                    <li><a href="/general/brightcove-gallery-cookies.html">Brightcove ギャラリーのクッキー</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/settings/index.html">ギャラリーの設定<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/settings/configuring-gallery-settings.html">ギャラリー設定の構成</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-youtube-settings.html">YouTubeの設定を構成する</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-access-control-profiles.html">アクセス制御プロファイルの設定</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-custom-domains-and-ssl.html">カスタムドメインと SSL の設定</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-auth0.html">Auth0 でのポータル・エクスペリエンスの保護</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-okta.html">Okta でのポータルエクスペリエンスの保護</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-ssl.html">SSL を使用したポータルエクスペリエンスの保護</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-single-sign-active-directory-federation-services.html">ADFS を使用したシングルサインオンの構成</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/develop/index.html">開発者<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/develop/page-experience-code-snippets.html">ページ内エクスペリエンスコードスニペット</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experiences-custom-css-reference.html">ページ内エクスペリエンスのカスタム CSS リファレンス</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/embedding-brightcove-page-experiences-cms.html">CMS へのページ内エクスペリエンスの埋め込み</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/overview-page-experience-api.html">概要:ページ内エクスペリエンス API </a></li>
-                  
-                
-                  
-                    <li><a href="/develop/overview-page-experience-client-api.html">概要:ページ内エクスペリエンスクライアント API </a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experience-api-error-reference.html">ページ内エクスペリエンス API エラーリファレンス</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experience-client-api-sample.html">ページ内エクスペリエンスクライアント API サンプル</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/quick-start-page-experience-platform-rest-api.html">「クイックスタート:ページ内エクスペリエンスプラットフォーム (REST) API </a></li>
-                  
-                
-                  
-                    <li><a href="/develop/reference.html">ページ内エクスペリエンスプラットフォーム API リファレンス</a></li>
-                  
-                
-                  
-                    <li><a href="https://docs.brightcove.com/in-page-exerience-client-api/ClientApi.html">ページ内エクスペリエンスクライアント API リファレンス</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/training/index.html"><strong>トレーニング+ </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/training/gallery-training-videos.html">ギャラリー・トレーニング・ビデオ</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-introduction-gallery.html">トレーニング:ギャラリーの紹介</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">トレーニング:ポータル・エクスペリエンスの構築</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">トレーニング:ページ内エクスペリエンスの構築</a></li>
-                  
-                
-                  
-                    <li><a href="/training/brightcove-university.html">Brightcove Universityトレーニングコース</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/release-notes/index.html">リリースノート<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/gallery-release-notes.html">ギャラリーリリースノート</a></li>
-                  
-                
-                  
-                    <li><a href="/release-notes/gallery-template-release-notes.html">ギャラリーテンプレートのリリースノート</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/support/index.html"><strong>サポート+ </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
                     
-                  
-                
-                  
-                    <li><a href="/support/viewing-brightcove-system-status-page.html">Brightcove のシステムステータスページの表示</a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">営業へのお問い合わせ</a></li>
-                  
-                
-                  
-                    <li><a href="/support/opening-case-with-brightcove-support.html">サポートケースを開く</a></li>
-                  
-                
+                    <li><a href="/get-started/step-step-creating-and-publishing-page-experience.html">ページ内エクスペリエンスの作成</a></li>
+                    
+                    <li><a href="/get-started/creating-and-managing-gallery-experiences.html">エクスペリエンスの作成と管理</a></li>
+                    
+                    <li><a href="/training/gallery-training-videos.html">ギャラリー・トレーニング・ビデオ</a></li>
+                    
+                    <li><a href="/get-started/getting-started-brightcove-gallery.html">Brightcoveギャラリーの入門</a></li>
+                    
+                    <li><a href="/get-started/overview-gallery-experiences.html">ギャラリーエクスペリエンスの概要</a></li>
+                    
+                    <li><a href="/training/training-demand-introduction-gallery.html">トレーニング:ギャラリーの紹介</a></li>
+                    
+                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">トレーニング:ポータル・エクスペリエンスの構築</a></li>
+                    
+                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">トレーニング:ページ内エクスペリエンスの構築</a></li>
+                   
               </ul>
-            
-          
+              
+              <h5 class="submenu-header"><a href="/experiences/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;体験談</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li class="submenu-header">
+                      <a href="/experiences/portal/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;ポータル</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/experiences/portal/adding-video-cloud-videos-portal-experience.html">ビデオクラウドビデオの追加</a></li>
+                            
+                            <li><a href="/experiences/portal/adding-videos-portal-experience.html">ビデオを追加する</a></li>
+                            
+                            <li><a href="/experiences/portal/adding-youtube-videos-portal-experience.html">YouTubeビデオの追加</a></li>
+                            
+                            <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">カスタムドメインの割り当て</a></li>
+                            
+                            <li><a href="/experiences/portal/changing-player-layout-portal-experience.html">プレーヤーのレイアウトを変更する</a></li>
+                            
+                            <li><a href="/experiences/portal/configuring-calls-action-portal-experience.html">アクションへの呼び出しの設定</a></li>
+                            
+                            <li><a href="/experiences/portal/configuring-search-engine-optimization-settings-portal-experience.html">SEO設定の構成</a></li>
+                            
+                            <li><a href="/experiences/portal/configuring-details-portal-experience.html">エクスペリエンスの詳細の構成</a></li>
+                            
+                            <li><a href="/experiences/portal/configuring-third-party-tracking-portal-experience.html">サードパーティトラッキングの設定</a></li>
+                            
+                            <li><a href="/experiences/portal/controlling-access-portal-experience.html">アクセスの制御</a></li>
+                            
+                            <li><a href="/experiences/portal/overview-creating-editing-and-publishing-portal-experiences.html">ポータルエクスペリエンスの作成、編集、公開</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-appearance-and-behavior-portal-experience.html">外観と動作のカスタマイズ</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-catalogue-template-settings.html">カタログテンプレート設定のカスタマイズ</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-chronicle-template-settings.html">クロニクルテンプレート設定のカスタマイズ</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-content-portal-experience-pages.html">ポータルページのコンテンツのカスタマイズ</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-marquee-template-settings.html">マーキーテンプレート設定のカスタマイズ</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-player-and-lead-form-settings-portal-experience.html">プレーヤーおよびリードフォーム設定のカスタマイズ</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-site-configuration-portal-experience.html">サイト構成のカスタマイズ</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-site-features-portal-experience.html">サイト機能のカスタマイズ</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-social-settings-portal-experience.html">ソーシャル設定のカスタマイズ</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-style-portal-experience.html">スタイルのカスタマイズ</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-video-and-playback-settings-portal-experience.html">ビデオと再生設定のカスタマイズ</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-video-settings-portal-experience.html">ビデオ設定のカスタマイズ</a></li>
+                            
+                            <li><a href="/experiences/portal/downloading-videos-portal-experience.html">ビデオのダウンロード</a></li>
+                            
+                            <li><a href="/experiences/portal/exporting-gallery-lead-data.html">ギャラリーリードデータのエクスポート</a></li>
+                            
+                            <li><a href="/experiences/portal/indexing-gallery-portal-experience.html">ポータルエクスペリエンスのインデックス作成</a></li>
+                            
+                            <li><a href="/experiences/portal/overview-gallery-portal-templates.html">ギャラリーポータルのテンプレートの概要</a></li>
+                            
+                            <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">プレビューと公開</a></li>
+                            
+                            <li><a href="/experiences/portal/updating-gallery-templates.html">ギャラリーテンプレートの更新</a></li>
+                            
+                            <li><a href="/experiences/portal/using-lead-form-portal-experience.html">リードフォームの使用</a></li>
+                            
+                            <li><a href="/experiences/portal/using-custom-fonts-portal-experience.html">カスタムフォントを使用する</a></li>
+                            
+                            <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">サイトエディタを使用してエクスペリエンスをカスタマイズする</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/experiences/inpage/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;ページ内</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/experiences/inpage/adding-components-page-experience.html">コンポーネントの追加</a></li>
+                            
+                            <li><a href="/experiences/inpage/adding-interactions-page-experience.html">インタラクションの追加</a></li>
+                            
+                            <li><a href="/experiences/inpage/adding-videos-page-experience.html">ビデオを追加する</a></li>
+                            
+                            <li><a href="/experiences/inpage/configuring-companion-components-page-experience.html">コンパニオンコンポーネントの構成</a></li>
+                            
+                            <li><a href="/experiences/inpage/configuring-details-page-experience.html">エクスペリエンスの詳細の構成</a></li>
+                            
+                            <li><a href="/experiences/inpage/configuring-settings-page-experience.html">エクスペリエンスの設定の構成</a></li>
+                            
+                            <li><a href="/experiences/inpage/configuring-video-downloads-page-experience.html">ビデオダウンロードの設定</a></li>
+                            
+                            <li><a href="/experiences/inpage/creating-custom-themes-page-experiences.html">カスタムテーマの作成</a></li>
+                            
+                            <li><a href="/experiences/inpage/customizing-page-experience.html">ページ内エクスペリエンスのカスタマイズ</a></li>
+                            
+                            <li><a href="/experiences/inpage/customizing-style-page-experience.html">スタイルのカスタマイズ</a></li>
+                            
+                            <li><a href="/experiences/inpage/overview-gallery-page-experience-templates.html">ページはめ込みエクスペリエンステンプレートの概要</a></li>
+                            
+                            <li><a href="/experiences/inpage/overview-creating-editing-and-publishing-page-experiences.html">概要:ページ内エクスペリエンスの作成と公開</a></li>
+                            
+                            <li><a href="/experiences/inpage/previewing-and-publishing-page-experience.html">プレビューと公開</a></li>
+                            
+                            <li><a href="/experiences/inpage/reviewing-page-experience-analytics.html">アナリティクスの確認</a></li>
+                            
+                            <li><a href="/experiences/inpage/reviewing-page-experience-calls-action-analytics.html">行動を促す分析の確認</a></li>
+                            
+                            <li><a href="/experiences/inpage/reviewing-page-experience-analytics-dashboard.html">アナリティクスダッシュボードの確認</a></li>
+                            
+                            <li><a href="/experiences/inpage/reviewing-page-experience-video-analytics.html">動画分析の確認</a></li>
+                            
+                            <li><a href="/experiences/portal/updating-gallery-templates.html">ギャラリーテンプレートの更新</a></li>
+                            
+                            <li><a href="/experiences/inpage/using-dynamic-video-overrides-page-experience.html">ダイナミックビデオオーバーライドを使用する</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/experiences/live/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;ライブイベント</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/experiences/live/adding-pigeonhole-live-event-page-experience.html">ライブインページへのピジョンホールの追加</a></li>
+                            
+                            <li><a href="/experiences/live/adding-pigeonhole-live-event-portal-experience.html">ライブポータルへのピジョンホールの追加</a></li>
+                            
+                            <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">カスタムドメインの割り当て</a></li>
+                            
+                            <li><a href="/experiences/portal/controlling-access-portal-experience.html">アクセスの制御</a></li>
+                            
+                            <li><a href="/experiences/live/creating-live-event-page-experience.html">ライブイベントインページエクスペリエンスの作成</a></li>
+                            
+                            <li><a href="/experiences/live/creating-live-event-portal-experience.html">ライブイベントポータルエクスペリエンスの作成</a></li>
+                            
+                            <li><a href="/experiences/live/creating-live-event-state-portal-event-experience.html">ライブイベント状態の作成</a></li>
+                            
+                            <li><a href="/experiences/live/creating-post-event-state-portal-event-experience.html">イベント後の状態の作成</a></li>
+                            
+                            <li><a href="/experiences/live/creating-pre-event-state-portal-event-experience.html">イベント前の状態の作成</a></li>
+                            
+                            <li><a href="/experiences/live/customizing-live-event-portal-settings.html">ライブイベントポータル設定のカスタマイズ</a></li>
+                            
+                            <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">プレビューと公開</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/experiences/landing/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;ランディングページ</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">カスタムドメインの割り当て</a></li>
+                            
+                            <li><a href="/experiences/landing/creating-landing-page-experience.html">ランディングページエクスペリエンスの作成</a></li>
+                            
+                            <li><a href="/experiences/portal/exporting-gallery-lead-data.html">ギャラリーリードデータのエクスポート</a></li>
+                            
+                            <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">プレビューと公開</a></li>
+                            
+                            <li><a href="/experiences/portal/using-lead-form-portal-experience.html">リードフォームの使用</a></li>
+                            
+                            <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">サイトエディタを使用してエクスペリエンスをカスタマイズする</a></li>
+                           
+                      </ul>
+                    </li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/general/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;全般的</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/general/gallery-system-requirements.html">ギャラリーのシステム要件</a></li>
+                    
+                    <li><a href="/general/troubleshooting-brightcove-gallery-issues.html">Brightcoveギャラリーの問題のトラブルシューティング</a></li>
+                    
+                    <li><a href="/general/brightcove-gallery-cookies.html">Brightcoveギャラリーのクッキー</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/settings/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;ギャラリーの設定</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/settings/configuring-gallery-settings.html">ギャラリー設定の構成</a></li>
+                    
+                    <li><a href="/settings/configuring-youtube-settings.html">YouTubeの設定を構成する</a></li>
+                    
+                    <li><a href="/settings/configuring-access-control-profiles.html">アクセス制御プロファイルの設定</a></li>
+                    
+                    <li><a href="/settings/configuring-custom-domains-and-ssl.html">カスタムドメインと SSL の設定</a></li>
+                    
+                    <li><a href="/settings/securing-portal-experience-auth0.html">Auth0 でのポータル・エクスペリエンスの保護</a></li>
+                    
+                    <li><a href="/settings/securing-portal-experience-okta.html">Okta でのポータルエクスペリエンスの保護</a></li>
+                    
+                    <li><a href="/settings/securing-portal-experience-ssl.html">SSL を使用したポータルエクスペリエンスの保護</a></li>
+                    
+                    <li><a href="/settings/configuring-single-sign-active-directory-federation-services.html">ADFS を使用したシングルサインオンの構成</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/develop/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;開発者</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/develop/page-experience-code-snippets.html">ページ内エクスペリエンスコードスニペット</a></li>
+                    
+                    <li><a href="/develop/page-experiences-custom-css-reference.html">ページ内エクスペリエンスカスタムCSSリファレンス</a></li>
+                    
+                    <li><a href="/develop/embedding-brightcove-page-experiences-cms.html">CMSへのページ内エクスペリエンスの埋め込み</a></li>
+                    
+                    <li><a href="/develop/overview-page-experience-api.html">概要:ページ内エクスペリエンス API</a></li>
+                    
+                    <li><a href="/develop/overview-page-experience-client-api.html">概要:ページ内エクスペリエンスクライアント API</a></li>
+                    
+                    <li><a href="/develop/page-experience-api-error-reference.html">ページ内エクスペリエンス API エラーリファレンス</a></li>
+                    
+                    <li><a href="/develop/page-experience-client-api-sample.html">ページ内エクスペリエンスクライアント API サンプル</a></li>
+                    
+                    <li><a href="/develop/quick-start-page-experience-platform-rest-api.html">「クイックスタート:ページ内エクスペリエンスプラットフォーム (REST) API</a></li>
+                    
+                    <li><a href="/develop/reference.html">インページエクスペリエンスプラットフォームAPIリファレンス</a></li>
+                    
+                    <li><a href="https://docs.brightcove.com/in-page-exerience-client-api/ClientApi.html">ページ内エクスペリエンスクライアント API リファレンス</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/training/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;トレーニング</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/training/gallery-training-videos.html">ギャラリー・トレーニング・ビデオ</a></li>
+                    
+                    <li><a href="/training/training-demand-introduction-gallery.html">トレーニング:ギャラリーの紹介</a></li>
+                    
+                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">トレーニング:ポータル・エクスペリエンスの構築</a></li>
+                    
+                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">トレーニング:ページ内エクスペリエンスの構築</a></li>
+                    
+                    <li><a href="/training/brightcove-university.html">Brightcove Universityトレーニングコース</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/release-notes/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;リリースノート</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/release-notes/gallery-release-notes.html">ギャラリーリリースノート</a></li>
+                    
+                    <li><a href="/release-notes/gallery-template-release-notes.html">ギャラリーテンプレートのリリースノート</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/support/index.html"><span style="color:#8E9093">+ </span>&nbsp;&nbsp;サポート</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Brightcoveのシステムステータスページの表示</a></li>
+                    
+                    <li><a href="/support/opening-case-with-brightcove-support.html">サポートケースを開く</a></li>
+                    
+                    <li><a href="/support/reset-support-portal-password.html">サポートポータルのパスワードをリセットする</a></li>
+                    
+                    <li><a href="/support/contact-sales.html">営業へのお問い合わせ</a></li>
+                   
+              </ul>
+             
       </nav>
     </div>
     <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
   <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="ナビゲーションメニュー"/></p>
+ <p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
 
 <!-- search bar -->
 <div id="nav-search-box" style="margin-top: 1rem;"></div>
@@ -611,15 +417,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <ul id="centered_in_page_toc" class="list-none"></ul>
 </details>
 <!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="新しいタブで開く" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
-
-<!-- 
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a>  <!-- 
   This content appears on:
   
   https://integrations.support.brightcove.com/general/embedding-brightcove-page-experiences-cms.html
@@ -629,15 +427,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   If you update in one place, you MUST update it in all!
  -->
 
- <h1>CMS へのページ内エクスペリエンスの埋め込み</h1>
+ <h1>へのページ内エクスペリエンスの埋め込みこ CMS </h1>
  <article class="bcls-article">
-  <summary>このトピックでは、Brightcove のページ内エクスペリエンスを CMS に統合するためのガイドラインを示します。</summary>
+  <summary>のトピックでは、Brightcove ページ内エクスペリエンスを CMS に統合するためのガイドラインについて説明します。</summary>
   <section class="bcls-section">
     <h2 id="introduction">はじめに</h2>
     
-    <p>Brightcove では、基本的な 1 つの動画プレーヤーとプレイリストプレーヤーに加えて、ページ内エクスペリエンスと呼ばれるマルチ動画プレイヤータイプも提供しています。ユーザーは、エクスペリエンスを簡単に埋め込み、Brightcove エクスペリエンスの埋め込みコードの生成に可能な限り柔軟性を提供して、HTML や JavaScript のエキスパートなしでルックアンドフィールを制御できるようにしたいと考えています。</p>
+    <p>ブライトコーブでは、基本的なシングルビデオプレーヤーとプレイリストプレーヤーに加えて、インページエクスペリエンスと呼ばれるマルチビデオプレーヤータイプも提供しています。ユーザーは、エクスペリエンスを簡単に埋め込み、ブライトコーブエクスペリエンスの埋め込みコードの生成に可能な限り柔軟性を提供して、HTML や JavaScript のエキスパートなしでルックアンドフィールを制御できるようにしたいと考えています。</p>
     
-    <p>ページ内エクスペリエンスは、<a href="https://www.brightcove.com/en/video-marketing-suite"> Video Marketing Suite および Enterprise Video Suite </a><a href="https://www.brightcove.com/en/enterprise-video-suite">に含まれている Gallery の一部であり、Video </a> Cloud のアドオンパッケージとしても購入できます。詳細はアカウントマネージャーにお問い合わせください。</p>
+    <p>ページ内エクスペリエンスは、<a href="https://www.brightcove.com/en/video-marketing-suite"> Video Marketing Suite</a>および<a href="https://www.brightcove.com/en/enterprise-video-suite"> Enterprise Video Suite に含まれる Gallery の一部であり</a>、Video Cloud のアドオンパッケージとして購入することもできます。詳細については、アカウントマネージャーにお問い合わせください。</p>
     </section>
     
     <section class="bcls-section">
@@ -646,15 +444,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>ユーザーがページ内エクスペリエンスを選択できるダイアログがあるはずです。このダイアログでは、ユーザーが以下のフィールドを設定できるようになります。</p>
     
     <ol>
-      <li><strong>Brightcove のアカウント:</strong>Brightcove アカウントが選択されていない場合、ユーザは選択できるはずです。</li>
-      <li><strong>検索フィルタ:</strong>ユーザーは検索文字列を入力して、表示されるエクスペリエンスのリストをフィルタリングできる必要があります。Brightcove の検索 API を使用する場合は、検索文字列を URI エンコードする必要があります。</li>
+      <li><strong>ブライトコーブアカウント:</strong>Brightcove アカウントが選択されていない場合、ユーザは選択できるはずです。</li>
+      <li><strong>検索フィルタ:</strong>ユーザーは検索文字列を入力して、表示されるエクスペリエンスのリストをフィルタリングできる必要があります。ブライトコーブの検索 API を使用する場合は、検索文字列を URI エンコードする必要があります。</li>
       <li><strong>注文:</strong>表示されるエクスペリエンスのリストは、名前でソートする必要があります。ユーザーは、昇順または降順を選択できる必要があります。デフォルトは昇順である必要があります。</li>
     </ol>
     
     <p>このダイアログには次の動作が必要です。</p>
     
     <ol>
-      <li>上記のユーザー選択に基づいて、エクスペリエンスのリストを表示します。ユーザーが 1 つのエクスペリエンスを選択できるようにします。</li>
+      <li>上記のユーザー選択に基づいて、エクスペリエンスのリストを表示します。ユーザーがエクスペリエンスを 1 つ選択できるようにします。</li>
       <li>表示されるエクスペリエンスのリスト:
       <ol type="a">
         <li>公開されたエクスペリエンスのみを表示する必要があります</li>
@@ -666,14 +464,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </section>
     
     <section class="bcls-subsection">
-    <h3 id="related_brightcove_documentation">Brightcove の関連ドキュメント</h3>
+    <h3 id="related_brightcove_documentation">ブライトコーブの関連ドキュメント</h3>
     
     <ul>
-      <li><a href="https://support.brightcove.com/integrating-your-cms-video-cloud">CMSとビデオクラウドの統合</a></li>
+      <li><a href="https://support.brightcove.com/integrating-your-cms-video-cloud">CMS とビデオクラウドの統合</a></li>
       <li><a href="https://docs.brightcove.com/in-page-exerience-api/v1/doc/index.html#operation/GetExperiences">エクスペリエンスのリストを取得する</a>
       <ul>
-        <li>昇順で名前でソート: <code translate="No">?sort=name</code></li>
-        <li>名前の降順でソート: <code translate="No">?sort=-name</code></li>
+        <li>名前で昇順で並べ替える: <code translate="No">?sort=name</code></li>
+        <li>名前を降順に並べ替える: <code translate="No">?sort=-name</code></li>
         <li>検索: <code translate="No">?q={searchstring}</code></li>
       </ul>
       </li>
@@ -684,7 +482,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <section class="bcls-subsection">
     <h3 id="example_dialog">ダイアログの実装例</h3>
     
-    <figure class="bcls-figure"><img class="bcls-image" alt="エクスペリエンスの選択ダイアログの例" src="https://general.support.brightcove.com/assets/images/shared-content/integrations/18645-sample-experience-select-dialog.png"/>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Sample Experience Selection Dialog" src="https://general.support.brightcove.com/assets/images/shared-content/integrations/18645-sample-experience-select-dialog.png" />
     <figcaption class="bcls-caption--image">エクスペリエンスの選択ダイアログの例</figcaption>
     </figure>
     </section>
@@ -696,19 +494,19 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
     <ol>
       <li><strong>埋め込みタイプ:</strong>ユーザーは、iFrameとJavaScriptの埋め込みコードのいずれかを選択できるはずです。デフォルトは JavaScript である必要があります。</li>
-      <li><strong>サイズ:</strong>ユーザーは、レスポンシブサイズまたは固定サイズのいずれかを選択できる必要があります。<sup><strong><a href="#note1-1">[ 1-1] </a></strong></sup>
+      <li><strong>サイズ:</strong>ユーザーは、レスポンシブサイズと固定サイズのどちらかを選択できる必要があります。<sup><strong><a href="#note1-1">[1-1] </a></strong></sup>
       <ol type="a">
-        <li>iFrameの場合、デフォルトは固定され、レスポンシブは無効にする必要があります。</li>
+        <li>iFrame の場合、デフォルトは Fixed で、レスポンシブは無効にする必要があります。</li>
         <li>Javascriptの場合、デフォルトはレスポンシブでなければなりません。</li>
       </ol>
       </li>
-      <li><strong>幅、高さ:</strong>ユーザーは [幅] と [高さ] を入力できる必要があります。<sup><strong><a href="#note1-1">[ 1-1] </a></strong></sup>
+      <li><strong>幅、高さ:</strong>ユーザーは幅と高さを入力できる必要があります。<sup><strong><a href="#note1-1">[1-1] </a></strong></sup>
       <ol type="a">
-        <li>iFrameの場合、デフォルトは固定され、レスポンシブは無効にする必要があります。</li>
+        <li>iFrame の場合、デフォルトは Fixed で、レスポンシブは無効にする必要があります。</li>
         <li>応答する場合は、幅と高さを無効にする必要があります。</li>
       </ol>
       </li>
-      <li><strong>エクスペリエンス動画の上書き:</strong>ユーザーは、動画のリストまたは再生リストを使用して、エクスペリエンスの既定の動画を上書きできる必要があります。ユーザーがエクスペリエンス動画を上書きすることを選択した場合は、以下の「エクスペリエンス動画の上書き」セクションに従って動画または再生リストを選択できます。</li>
+      <li><strong>エクスペリエンスビデオのオーバーライド:</strong>ユーザーは、動画のリストまたは再生リストを使用して、エクスペリエンスの既定の動画を上書きできる必要があります。ユーザーがエクスペリエンス動画を上書きすることを選択した場合は、以下の「エクスペリエンス動画の上書き」セクションに従って動画または再生リストを選択できます。</li>
     </ol>
     
     <p>このダイアログには、次の追加の動作が必要です。</p>
@@ -716,13 +514,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <ol>
       <li>生成された Brightcove 埋め込みコードは、ダイアログでユーザに表示されます。</li>
       <li>ユーザーは、埋め込みコードを編集できる必要があります。埋め込みコードの設定にできるだけ柔軟にユーザーを提供しようとしていますが、自動的に生成されるものをオーバーライドする必要がある場合があります。</li>
-      <li>ユーザーがダイアログで以前の選択の1つを変更した場合、ユーザーの編集は新しく生成されたコードで上書きされます。</li>
+      <li>ユーザーがダイアログで前の選択内容のいずれかを変更すると、ユーザーの編集内容が新しく生成されたコードで上書きされます。</li>
     </ol>
     
     <h4>注</h4>
     
     <ul>
-      <li id="note1-1"><sup><strong>[ 1-1] </strong></sup> CMS がコードを埋め込むためのネイティブコンテナを提供しており、ユーザーがレスポンシブ対固定および幅/高さを指定できる場合は、コンテナをサイジングに使用し、Brightcove の埋め込みコードを常にレスポンシブにする方が理にかなっています。</li>
+      <li id="note1-1"><sup><strong>[1-1]</strong></sup> CMSがコードを埋め込むためのネイティブコンテナを提供し、ユーザーがレスポンシブvs固定および幅/高さを指定できる場合は、サイズ設定にコンテナを使用し、Brightcove埋め込みコードを常にレスポンシブにする方が理にかなっています。</li>
     </ul>
     </section>
     
@@ -732,33 +530,33 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>ユーザーがエクスペリエンスビデオを上書きすることを選択した場合、ダイアログでユーザーが以下のフィールドを設定できるようになります。</p>
     
     <ol>
-      <li><strong>検索フィルタ:</strong>ユーザーは検索文字列を入力して、表示されている動画または再生リストのリストをフィルタリングできる必要があります。Brightcove の検索 API を使用する場合は、検索文字列を URI エンコードする必要があります。</li>
+      <li><strong>検索フィルタ:</strong>ユーザーは検索文字列を入力して、表示されている動画または再生リストのリストをフィルタリングできる必要があります。ブライトコーブの検索 API を使用する場合は、検索文字列を URI エンコードする必要があります。</li>
       <li><strong>フォルダ:</strong>ユーザーは、Brightcove アカウントから Folder 名を選択して、表示される動画のリストをフィルタリングできます。Brightcove API にはフォルダ用のフィルタが組み込まれていないため、クライアントコードですべての動画を取得してから、フォルダでフィルタリングする必要があります。(プレイリストには適用されません)</li>
-      <li><strong>制限:</strong>ユーザーは、主に検索のパフォーマンスを向上させるために、返される動画の数を制限できる必要があります。Brightcove 検索を使用する場合、指定できる上限は 100 です。100 を超える動画を返すには、ページングメカニズムを実装する必要があります。また、ユーザーがフィルタするフォルダを選択した場合、クライアントはページングメカニズムを使用してアカウント内のすべてのビデオを要求し、フォルダによってそのリストをローカルにフィルタリングし、ユーザー制限で指定された動画の数を返す必要があります。(プレイリストには適用されません)</li>
-      <li><strong>並べ替え方法:</strong>ユーザーはソートフィールドを選択できるはずです。
+      <li><strong>制限:</strong>ユーザーは、主に検索のパフォーマンスを向上させるために、返される動画の数を制限できる必要があります。ブライトコーブ検索を使用する場合、指定できる上限は 100 です。100 を超える動画を返すには、ページングメカニズムを実装する必要があります。また、ユーザーがフィルタするフォルダを選択した場合、クライアントはページングメカニズムを使用してアカウント内のすべてのビデオを要求し、フォルダによってそのリストをローカルにフィルタリングし、ユーザー制限で指定された動画の数を返す必要があります。(プレイリストには適用されません)</li>
+      <li><strong>並び替え:</strong>ユーザーはソートフィールドを選択できるはずです。
       <ol type="a">
         <li>動画の場合、ユーザーは動画名、更新日、作成日、開始日、合計再生数を選択できる必要があります。デフォルトは更新日です。</li>
         <li>プレイリストの場合、ユーザーは名前と変更日のいずれかを選択します。デフォルトは修正日です。</li>
       </ol>
       </li>
-      <li><strong>ソート順:</strong>ユーザーは、昇順または降順を選択できる必要があります。デフォルトは降順である必要があります。</li>
+      <li><strong>ソート順序:</strong>ユーザーは、昇順または降順を選択できる必要があります。デフォルトは降順である必要があります。</li>
     </ol>
     
     <p>このダイアログには次の動作が必要です。</p>
     
     <ol>
-      <li>上記のユーザー選択に基づいて、動画または再生リストのリストを表示します。ユーザーが複数のビデオまたは1つのプレイリストを選択できるようにします。</li>
+      <li>上記のユーザー選択に基づいて、動画または再生リストのリストを表示します。ユーザーが複数のビデオまたは 1 つのプレイリストを選択できるようにします。</li>
       <li>動画のリストを表示する場合：
       <ol type="a">
         <li>アクティブな動画のみが表示されます。</li>
         <li>サムネイル画像、ビデオ名、および ID が表示されます。</li>
-        <li>1 つまたは複数のビデオを選択できます。</li>
+        <li>1 つ以上のビデオを選択できます。</li>
       </ol>
       </li>
       <li>プレイリストのリストを表示する場合:
       <ol type="a">
         <li>プレイリストが手動再生リストの場合は、プレイリスト名、ID、再生リストに含まれる動画の数を表示します。</li>
-        <li>プレイリストがスマートプレイリストの場合は、再生リスト名、ID、およびビデオ数の代わりに—を表示します。</li>
+        <li>プレイリストがスマートプレイリストの場合は、プレイリストの名前、ID、--- および動画数の代わりに表示します。</li>
         <li>選択できるプレイリストは 1 つだけです。</li>
       </ol>
       </li>
@@ -768,7 +566,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <section class="bcls-subsection">
     <h3 id="Example_video_override_dialog_implementation">ビデオオーバーライドダイアログの実装例</h3>
     
-    <figure class="bcls-figure"><img class="bcls-image" alt="サンプルビデオオーバーライドダイアログ" src="https://general.support.brightcove.com/assets/images/shared-content/integrations/18645-sample-video-override-dialog.png"/>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Sample Video Override Dialog" src="https://general.support.brightcove.com/assets/images/shared-content/integrations/18645-sample-video-override-dialog.png" />
     <figcaption class="bcls-caption--image">サンプルビデオオーバーライドダイアログ</figcaption>
     </figure>
     </section>
@@ -776,7 +574,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <section class="bcls-subsection">
     <h3 id="Example_playlist_override_dialog_implementation">プレイリストオーバーライドダイアログの実装例</h3>
     
-    <figure class="bcls-figure"><img class="bcls-image" alt="サンプルビデオオーバーライドダイアログ" src="https://general.support.brightcove.com/assets/images/shared-content/integrations/18645-sample-playlist-override-dialog.png"/>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Sample Video Override Dialog" src="https://general.support.brightcove.com/assets/images/shared-content/integrations/18645-sample-playlist-override-dialog.png" />
     <figcaption class="bcls-caption--image">サンプルビデオオーバーライドダイアログ</figcaption>
     </figure>
     </section>
@@ -785,18 +583,18 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <section class="bcls-section">
     <h2 id="Embed_parameters_and_code">パラメータとコードを埋め込む</h2>
     
-    <p>このセクションでは、ユーザーの選択に基づいて Experience 埋め込みコードを生成する方法について説明します。以下に説明するように、<code translate="No">%XYZ%</code>値は埋め込みコードに代入されます。</p>
+    <p>このセクションでは、ユーザーの選択に基づいて Experience 埋め込みコードを生成する方法について説明します。<code translate="No">%XYZ%</code>値は、以下に説明するように、埋め込みコードに置き換えられます。</p>
     
     <section class="bcls-subsection">
     <h3 id="commong_parameters">共通パラメータ</h3>
     
     <ul>
-      <li><code translate="No">%ACCOUNTID%</code> = ユーザーが選択したBrightcove のアカウント ID</li>
-      <li><code translate="No">%VIDEOIDLIST%</code> = ユーザーが選択した動画 ID（スペースなしでカンマ区切り）</li>
+      <li><code translate="No">%ACCOUNTID%</code> = ユーザーが選択したブライトコーブのアカウント ID</li>
+      <li><code translate="No">%VIDEOIDLIST%</code> = ユーザーが選択したビデオ ID、カンマ区切り（スペースなし）</li>
       <li><code translate="No">%PLAYLISTID%</code> = ユーザーが選択したプレイリスト ID</li>
-      <li><code translate="No">%EXPERIENCEID%</code> = ユーザーが選択したビデオプレーヤーIDまたはプレイリストプレーヤー ID</li>
-      <li><code translate="No">%CMS%</code> = CMS の名前</li>
-      <li><code translate="No">%CMSVERSION%</code> = CMS のバージョン</li>
+      <li><code translate="No">%EXPERIENCEID%</code> = ユーザーが選択したビデオプレーヤー ID またはプレイリストプレーヤー ID</li>
+      <li><code translate="No">%CMS%</code> = CMSの名前</li>
+      <li><code translate="No">%CMSVERSION%</code> = CMSのバージョン</li>
       <li><code translate="No">%CONNECTORVERSION%</code> = コネクタのバージョン</li>
     </ul>
     </section>
@@ -822,7 +620,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </section>
     
     <section class="bcls-subsection">
-    <h3 id="iframe_video_experience_embed">Brightcove の埋め込みコード</h3>
+    <h3 id="iframe_video_experience_embed">ブライトコーブの埋め込みコード</h3>
     
     <pre>
     <code translate="No">&lt;div style="display:block;position:relative;width:%WIDTH%;height:%HEIGHT%"&gt;
@@ -836,7 +634,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <section class="bcls-subsection">
     <h3 id="example_iframe_video_experience">実装例</h3>
     
-    <figure class="bcls-figure"><img class="bcls-image" alt="実装例" src="https://general.support.brightcove.com/assets/images/shared-content/integrations/18645-sample-iframe-video-embed-dialog.png"/>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Example Implementation" src="https://general.support.brightcove.com/assets/images/shared-content/integrations/18645-sample-iframe-video-embed-dialog.png" />
     <figcaption class="bcls-caption--image">実装例</figcaption>
     </figure>
     </section>
@@ -857,7 +655,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h4>注</h4>
     
     <ul>
-      <li id="note2-1"><sup><strong>[ 2-1] </strong></sup>幅と高さはユーザーが選択できない</li>
+      <li id="note2-1"><sup><strong>[2-1]</strong></sup> 幅と高さはユーザーが選択できません</li>
     </ul>
     </section>
     
@@ -872,7 +670,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </section>
     
     <section class="bcls-subsection">
-    <h3 id="iframe_video_experience_embed">Brightcove の埋め込みコード</h3>
+    <h3 id="iframe_video_experience_embed">ブライトコーブの埋め込みコード</h3>
     
     <pre>
     <code translate="No">&lt;div style="display:block;position:relative;width:%WIDTH%;height:%HEIGHT" data-experience="%EXPERIENCEID%" data-video-ids=”%VIDEOIDLIST% "
@@ -886,13 +684,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <section class="bcls-subsection">
     <h3 id="example_inpage_video_experience">実装例</h3>
     
-    <figure class="bcls-figure"><img class="bcls-image" alt="実装例" src="https://general.support.brightcove.com/assets/images/shared-content/integrations/18645-sample-inpage-video-embed-dialog.png"/>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Example Implementation" src="https://general.support.brightcove.com/assets/images/shared-content/integrations/18645-sample-inpage-video-embed-dialog.png" />
     <figcaption class="bcls-caption--image">実装例</figcaption>
     </figure>
     </section>
     </section>
- </article>
-<!-- complete bootstrap layout -->
+ </article> <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
       
@@ -906,11 +703,18 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  ページの最終更新日21 May 2021
+</div>
+
+
+ <footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+        <img src="https://support.brightcove.com/site-assets/images/site/SVG/COVE004_Brightcove_Logo_093020_RGB_KO.svg" class="bc-footer-logo" alt="Brightcove">
 
-        <h2>Brightcove サポート</h2>
+        <h2>ブライトコーブのサポート</h2>
 
         <ul class="menu">
           <li>
@@ -937,14 +741,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <a href="https://studio.support.brightcove.com/training/register-training.html">コースに登録する</a>
           </li>
           <li>
-            <a href="https://university.brightcove.com/">Brightcove University</a>
+            <a href="https://university.brightcove.com/">ブライトコーブ大学</a>
           </li>
         </ul>
 
       </nav>
       <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
 
-        <h2>Brightcove</h2>
+        <h2>ブライトコーブ</h2>
 
         <ul class="menu">
           <li>
@@ -963,12 +767,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <table>
           <tr>
             <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> ブライトコーブ Inc. すべての権利を保有</div>
             </td>
             <td><a href="https://www.brightcove.com/en/legal/privacy">プライバシー</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">利用規約</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a>
                 </div>
               </div>
             </td>
@@ -979,27 +783,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
+  var searchBox = sajari.init ( { mode: "search-box", project: "1588255093746585379", // Set this to your project. collection: "brightcove-documenation", // Set this to your collection. instantPipeline: "autocomplete", // Pipeline used as you type inputPlaceholder: "Search", // Input element placeholder maxSuggestions: 5, // Maximum number of suggestions to show attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to } ); SearchBox (「サブ」,「pipeline.search-sent」, 関数 (_, クエリ) { window.location = "/search.html?q=" + encodeURIComponent(query.q); } );
   
 
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+</script>   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
@@ -1017,34 +806,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   
   <script src="/assets/js/sajari-search-foot.js"></script>
   
+  <script>
+  フェザー.replace（）
+</script>
   <!-- <script src="/assets/js/sajari-index.js"></script> -->
   <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
+    asj-paginator__page-number.sj-paginator__page-number { background-color: lightblue; }—current.css-so0ov7 { margin-top: 3rem; margin-left: .3rem; border-top-left-radius: .4rem; border-top-right-radius: .4rem; background-color:#e8e8e8; } div.sj-tabs__tab div.sj-tabs__tab { border-bottom-color: crimson; background-color: #f8f8f8; }—選択されたp.sj-result__description.css-p9jvyt { font-size: 1rem; } .sj-result__text。css-31l7gp h3 { color: navy; font-size: 1.4rem; }
     </style>
 
 </body>
 
-</html>
+</html> 

@@ -1,0 +1,122 @@
+---
+title: 仮想イベントエクスペリエンスのヘッダーのカスタマイズ
+parent: Virtual Event 
+grandparent: Experiences
+layout: staging
+---
+<article class="bcls-article">
+  <h1>仮想イベントエクスペリエンスのヘッダーのカスタマイズ</h1>
+  <summary>このトピックでは、仮想イベントエクスペリエンスページのヘッダーをカスタマイズする方法について説明します。</summary>
+  <section class="bcls-section">
+    <p>ヘッダーはすべてのページの上部に表示されます。ヘッダーは、設定ファイルの値から構築されます。ヘッダーは、次のコンポーネントで構成されています。</p>
+    <ul>
+      <li>ヘッダーロゴ</li>
+      <li>リンク集</li>
+      <li>ソーシャルアイコン</li>
+      <li>検索</li>
+    </ul>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/template-overview-header.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="logo">ヘッダーロゴ</h2>
+    <p>ヘッダーイメージは、<code translate="No">images</code>設定ファイル内のオブジェクトによって指定されます。</p>
+    <ul>
+      <li><code translate="No">header_logo</code> -ヘッダーに表示する画像への URL</li>
+    </ul>
+    <p>.Png ファイルと.jpg ファイルがサポートされています。ヘッダーのロゴは、縦横に 178px に縮小されます。</p>
+</section>
+  <section class="bcls-section">
+    <h2 id="links">リンク集</h2>
+    <p>デフォルトでは、「<strong>ホーム」</strong>、「<strong>ライブストリーム」、</strong>および「<strong>オンデマンドセッション」</strong>のリンクがテンプレートにハードコードされています。</p>
+    <ul>
+      <li><strong>HOME</strong> -ホームへ、ページのトップへ</li>
+      <li><strong>ライブストリーム</strong> -注目のコレクションに移動します（トップビデオプレーヤー） </li>
+      <li><strong>オンデマンドセッション</strong> -トラックセクションに移動します。 </li>
+    </ul>
+    <p><code translate="No">header_links</code>設定ファイルでオブジェクトを編集すると、リンクを追加できます。</p>
+    <ul>
+      <li><code translate="No">link_url</code> -宛先 URL</li>
+      <li><code translate="No">label</code> -ヘッダーに表示されるラベル</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="social">ソーシャルアイコン</h2>
+    <p>デフォルトでは、ヘッダーにはソーシャルアイコンが表示されます。</p>
+    <ul>
+      <li>Facebook</li>
+      <li>Instagram</li>
+      <li>Twitter</li>
+      <li>LinkedIn</li>
+      <li>YouTube</li>
+    </ul>
+    ヘッダーに表示されるソーシャルアイコンは、<code translate="No">social</code>設定ファイル内のオブジェクトを編集することで編集/削除できます。詳細については、「<a href="/experiences/virtual-event/configuring-social-icons-virtual-event-experience.html">仮想イベントエクスペリエンスのソーシャルアイコンの設定」を参照してください</a>。</section>
+  <section class="bcls-section">
+    <h2 id="search">検索</h2>
+    <p>検索を有効にして検索フィールドを表示するには、<a href="/experiences/portal/customizing-site-features-portal-experience.html">エクスペリエンスの検索を有効にします</a>。デフォルトでは、ヘッダーの検索フィールドには、テキスト入力用の 1 行が表示されます。 </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/header-search-default.png" /></figure>
+    <p>この例の検索ボックスには、検索フィールドの周囲にボックスが表示されるようにスタイルが設定されています。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="css">ヘッダー固有のスタイル設定</h2>
+    <h3>モバイルデバイス上のリンク</h3>
+    <p>デフォルトでは、ヘッダーに追加されたリンクは、モバイルデバイスを使用しているときに表示されません。次の JavaScript でこの問題を解決します。</p>
+    <pre><code translate="No">
+for (let i = 0, l = ciabConfig.header_links.length; i < l; i++) {
+  let link = ciabConfig.header_links[i];
+  let li = document.createElement('li');
+  let ul = document.getElementById('main-nav-cat');
+  li.className = 'main-nav-category main-nav-category-home';
+  li.innerHTML = ('<a href="../'+ link.link_url +'">' + link.label + '</a>'); ul.appendChild(li);
+}
+    </code></pre>
+    <h3>検索フィールドの書式設定</h3>
+    <p>デフォルトでは、検索フィールドにはテキスト入力用の 1 行が表示されます。次の CSS は、検索フィールドをテキストボックスとしてフォーマットします。</p>
+    <pre><code translate="No">
+.bc-custom-header-nav .bc-nav-menu .main-header-search-box {
+    margin-right: 45px;
+    width: 170px;
+}
+
+.bc-custom-header-nav .bc-nav-menu .main-header-search-box input.main-header-search-input {
+	background-color: transparent;
+	color: #fff;
+	margin-top: -10px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: .88;
+	text-transform: uppercase;
+	display: block;
+    padding: 2px 5px 2px 30px;
+	width: inherit;
+	border: 1px solid #fff;
+}
+
+.bc-custom-header-nav .bc-nav-menu .main-header-search-box input.main-header-search-input::-webkit-input-placeholder {
+	text-transform: uppercase;
+	color: #fff
+}
+
+.bc-custom-header-nav .bc-nav-menu .main-header-search-box input.main-header-search-input::-moz-placeholder {
+	text-transform: uppercase;
+	color: #fff
+}
+
+.bc-custom-header-nav .bc-nav-menu .main-header-search-box input.main-header-search-input:-ms-input-placeholder {
+	text-transform: uppercase;
+	color: #fff
+}
+
+.bc-custom-header-nav .bc-nav-menu .main-header-search-box input.main-header-search-input::-ms-input-placeholder {
+	text-transform: uppercase;
+	color: #fff
+}
+
+.bc-custom-header-nav .bc-nav-menu .main-header-search-box input.main-header-search-input::placeholder {
+	text-transform: uppercase;
+	color: #fff
+}
+
+    </code></pre>
+  </section>
+</article>

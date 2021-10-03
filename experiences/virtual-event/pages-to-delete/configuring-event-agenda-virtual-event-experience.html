@@ -1,0 +1,34 @@
+---
+title: イベントアジェンダの設定
+parent: Virtual Event 
+grandparent: Experiences
+layout: staging
+---
+<article class="bcls-article">
+  <h1>イベントアジェンダの構成</h1>
+  <summary>このトピックでは、仮想イベントエクスペリエンスのイベントアジェンダをカスタマイズする方法を学習します。</summary>
+  <section class="bcls-section">
+    <p>イベントの議題は、通常、特集コレクションに表示されるスケジュールされたライブイベントを表示するために使用されます。各セッションで表示されるボタンは、セッションの状態によって異なります。</p>
+    <ul>
+      <li><strong>イベントの前</strong> -ボタンが表示されず、カウントダウンタイマーが表示されます。</li>
+      <li> <strong>開催中</strong> -イベントが進行中のときに今すぐライブする</li>
+      <li><strong>イベント後</strong> -ボタンは、過去のイベントのセッションを表示します。</li>
+    </ul>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/schedule-example.png" /></figure>
+    <p>議題の日数に基づいて、[ <strong>表示]</strong>ドロップダウンが表示され、閲覧者は表示する日のスケジュールを選択できます。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/schedule-example-show.png" /></figure>
+    <p>議題情報は、<code translate="No">schedule</code>設定ファイル内のオブジェクトを編集することでカスタマイズされます。</p>
+    <ul>
+      <li><code translate="No">name</code> -セッション名</li>
+      <li><code translate="No">description</code> -セッションの説明-現在ページには表示されませんが、カスタム JavaScript を使用して表示可能</li>
+      <li><code translate="No">starts_at</code> -セッション開始日時</li>
+      <li><code translate="No">ends_at</code> -セッション終了日時</li>
+      <li><code translate="No">live_id</code> -未使用</li>
+      <li><code translate="No">vod_id</code> -ビデオ ID</li>
+      <li><code translate="No">speakers</code> -セッションスピーカー情報</li>
+      <li><code translate="No">image_url</code> -セッションイメージ。デフォルトの画像サイズは320ピクセル×180ピクセルです。画像はこのサイズに切り取られます。<br>
+      </li>
+    </ul>
+    <p><code translate="No">schedule</code>コンフィギュレーションファイル内のオブジェクトには、<code translate="No">title</code>スケジュールの上に表示されるのパラメータと、スケジュールを表示するかどうかを設定するためのパラメータもあります。<code translate="No">expanded</code>モードです。</p>
+  </section>
+</article>

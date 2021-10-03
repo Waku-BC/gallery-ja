@@ -1,0 +1,48 @@
+---
+title: イベントアジェンダファイルを作成する
+parent: Virtual Event 
+grandparent: Experiences
+description: In this topic you will learn how to create an event agenda file that can be uploaded to initially populate an online agenda for a Virtual Event Experience.
+layout: staging
+---
+<article class="bcls-article">
+  <h1>イベントアジェンダファイルの作成</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>通常、イベントアジェンダは、MicrosoftExcelやGoogleスプレッドシートなどのサードパーティツールで最初に作成されます。アジェンダモジュールでは、イベントアジェンダを最初に作成するために、外部の.csvアジェンダファイルをアップロードする必要があります。アジェンダファイルがアップロードされると、アジェンダモジュールを使用して編集できます。</p>
+    <aside class="bcls-aside bcls-aside--information">注:サンプル議題テンプレートファイルは、こちらからダウンロードできます。</aside><aside class="bcls-aside bcls-aside--information">注:アジェンダモジュールでアジェンダを作成する方法はありません。イベント議題を最初に入力するには、.csv ファイルをアップロードする必要があります。</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="naming">列の命名要件</h2>
+    <p>最初のアジェンダファイルを作成するときに、サンプルのアジェンダテンプレートをダウンロードして編集するか、作成した既存のアジェンダファイルを使用できます。アジェンダモジュールは、特定の列名の存在を探します。これらの列は、アジェンダモジュールの適切なフィールドにマップされます。アジェンダファイルにある可能性のある他の列は、アジェンダモジュールによって無視されます。アジェンダファイルをアップロードするには、次の列が必要です。</p>
+    <ul>
+      <li><code translate="No">name</code> -セッション名</li>
+      <li><code translate="No">start_date</code> -セッション開始日（MM / DD / YYYY形式）</li>
+      <li><code translate="No">start_time</code> -セッション開始時間</li>
+      <li><code translate="No">timezone</code> -start_time のタイムゾーン（<a href="https://nodatime.org/TimeZones">IANAタイムゾーンのゾーン ID を使用</a>）</li>
+      <li><code translate="No">duration</code> -セッション時間（分）</li>
+      <li><code translate="No">track</code> -トラック（テクニカル、セールス、マーケティングなど）を識別する値。<strong> ALLのトラック名は、セッションがすべてのトラック（昼食、休憩など）</strong>にまたがることを示します。</li>
+    </ul>
+    <p>次の列はオプションですが、アジェンダファイルに存在する場合は、アジェンダモジュールにもインポートされます。</p>
+    <ul>
+      <li><code translate="No">description</code> -セッションの説明</li>
+      <li><code translate="No">speaker1_first</code> -スピーカー名</li>
+      <li><code translate="No">speaker1_last</code> -スピーカーの名前</li>
+      <li><code translate="No">speaker1_email</code> -スピーカーの電子メールアドレス（スピーカーを一意に識別するために使用）</li>
+      <li><code translate="No">speaker2_first</code> -スピーカー2の名</li>
+      <li><code translate="No">speaker2_last</code> -スピーカー2の姓</li>
+      <li><code translate="No">speaker2_email</code> -スピーカー2の電子メールアドレス（スピーカーを一意に識別するために使用）</li>
+      <li><code translate="No">speaker3_first</code> -スピーカー3の名</li>
+      <li><code translate="No">speaker3_last</code> -スピーカー3の姓</li>
+      <li><code translate="No">speaker3_email</code> -スピーカー3の電子メールアドレス（スピーカーを一意に識別するために使用）</li>
+      <li><code translate="No">session_type</code> -セッションタイプ（セッション、基調講演、会議、その他）</li>
+      <li><code translate="No">video _id</code> -ビデオID（セッション、基調講演、その他のセッションタイプ用）</li>
+      <li><code translate="No">url</code> -会議URL（会議セッションタイプ用）</li>
+      <li><code translate="No">related _label</code> -アジェンダモジュールに表示される関連リンクのラベル</li>
+      <li><code translate="No">related_link</code> -セッションの配布物、スライドなどへのURLリンク。</li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information">注:アジェンダのアップロードは最大 3 人のスピーカーをサポートしており、アジェンダモジュールを使用してセッションにスピーカーを追加できます。</aside>
+    <p>アジェンダをアジェンダモジュールにインポートする準備ができたら、それを.csvファイルとしてエクスポートします。<strong>アジェンダモジュールは、.csvファイルのみをインポートできます。</strong>アジェンダファイルをアジェンダモジュールにアップロードする方法については、「<a href="managing-agenda-virtual-event-experience.html">イベントアジェンダのアップロードとカスタマイズ」を参照してください</a>。</p>
+    <p>&nbsp;</p>
+  </section>
+</article>

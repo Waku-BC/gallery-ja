@@ -1,0 +1,269 @@
+- section: 
+  name: ホーム
+  url: /index.html
+- section: 
+  name: 入門編
+  url: /get-started/index.html
+  docs:
+    - name: ポータルエクスペリエンスの作成
+      url: /get-started/step-step-creating-and-publishing-portal-experience.html
+    - name: ページ内エクスペリエンスの作成
+      url: /get-started/step-step-creating-and-publishing-page-experience.html
+    - name: エクスペリエンスの作成と管理
+      url: /get-started/creating-and-managing-gallery-experiences.html
+    - name: ギャラリー・トレーニング・ビデオ
+      url: /training/gallery-training-videos.html
+    - name: Brightcoveギャラリーの入門
+      url: /get-started/getting-started-brightcove-gallery.html
+    - name: ギャラリーエクスペリエンスの概要
+      url: /get-started/overview-gallery-experiences.html
+    - name: 'トレーニング:ギャラリーの紹介'
+      url: /training/training-demand-introduction-gallery.html
+    - name: 'トレーニング:ポータル・エクスペリエンスの構築'
+      url: /training/training-demand-building-portal-experiences-using-gallery.html
+    - name: 'トレーニング:ページ内エクスペリエンスの構築'
+      url: /training/training-demand-building-page-experiences-using-gallery.html
+- section: 
+  name: 体験談
+  url: /experiences/index.html
+  docs:
+    - name: ポータル
+      url: /experiences/portal/index.html
+      docs:
+        - name: ビデオクラウドビデオの追加
+          url: /experiences/portal/adding-video-cloud-videos-portal-experience.html
+        - name: ビデオを追加する
+          url: /experiences/portal/adding-videos-portal-experience.html
+        - name: YouTubeビデオの追加
+          url: /experiences/portal/adding-youtube-videos-portal-experience.html
+        - name: カスタムドメインの割り当て
+          url: /experiences/portal/assigning-custom-domain-portal-experience.html
+        - name: プレーヤーのレイアウトを変更する
+          url: /experiences/portal/changing-player-layout-portal-experience.html
+        - name: アクションへの呼び出しの設定
+          url: /experiences/portal/configuring-calls-action-portal-experience.html
+        - name: SEO設定の構成
+          url: /experiences/portal/configuring-search-engine-optimization-settings-portal-experience.html
+        - name: エクスペリエンスの詳細の構成
+          url: /experiences/portal/configuring-details-portal-experience.html
+        - name: サードパーティトラッキングの設定
+          url: /experiences/portal/configuring-third-party-tracking-portal-experience.html
+        - name: アクセスの制御
+          url: /experiences/portal/controlling-access-portal-experience.html
+        - name: ポータルエクスペリエンスの作成、編集、公開
+          url: /experiences/portal/overview-creating-editing-and-publishing-portal-experiences.html   
+        - name: 外観と動作のカスタマイズ
+          url: /experiences/portal/customizing-appearance-and-behavior-portal-experience.html
+        - name: カタログテンプレート設定のカスタマイズ
+          url: /experiences/portal/customizing-catalogue-template-settings.html
+        - name: クロニクルテンプレート設定のカスタマイズ
+          url: /experiences/portal/customizing-chronicle-template-settings.html
+        - name: ポータルページのコンテンツのカスタマイズ
+          url: /experiences/portal/customizing-content-portal-experience-pages.html
+        - name: マーキーテンプレート設定のカスタマイズ
+          url: /experiences/portal/customizing-marquee-template-settings.html
+        - name: プレーヤーおよびリードフォーム設定のカスタマイズ
+          url: /experiences/portal/customizing-player-and-lead-form-settings-portal-experience.html
+        - name: サイト構成のカスタマイズ
+          url: /experiences/portal/customizing-site-configuration-portal-experience.html
+        - name: サイト機能のカスタマイズ
+          url: /experiences/portal/customizing-site-features-portal-experience.html
+        - name: ソーシャル設定のカスタマイズ
+          url: /experiences/portal/customizing-social-settings-portal-experience.html
+        - name: スタイルのカスタマイズ
+          url: /experiences/portal/customizing-style-portal-experience.html
+        - name: ビデオと再生設定のカスタマイズ
+          url: /experiences/portal/customizing-video-and-playback-settings-portal-experience.html
+        - name: ビデオ設定のカスタマイズ
+          url: /experiences/portal/customizing-video-settings-portal-experience.html
+        - name: ビデオのダウンロード
+          url: /experiences/portal/downloading-videos-portal-experience.html
+        - name: ギャラリーリードデータのエクスポート
+          url: /experiences/portal/exporting-gallery-lead-data.html
+        - name: ポータルエクスペリエンスのインデックス作成
+          url: /experiences/portal/indexing-gallery-portal-experience.html
+        - name: ギャラリーポータルのテンプレートの概要
+          url: /experiences/portal/overview-gallery-portal-templates.html
+        - name: プレビューと公開
+          url: /experiences/portal/previewing-and-publishing-portal-experience.html
+        - name: ギャラリーテンプレートの更新
+          url: /experiences/portal/updating-gallery-templates.html
+        - name: リードフォームの使用
+          url: /experiences/portal/using-lead-form-portal-experience.html         
+        - name: カスタムフォントを使用する
+          url: /experiences/portal/using-custom-fonts-portal-experience.html
+        - name: サイトエディタを使用してエクスペリエンスをカスタマイズする
+          url: /experiences/portal/using-site-editor-customize-portal-experience.html
+    - name: ページ内
+      url: /experiences/inpage/index.html
+      docs:
+        - name: コンポーネントの追加
+          url: /experiences/inpage/adding-components-page-experience.html
+        - name: インタラクションの追加
+          url: /experiences/inpage/adding-interactions-page-experience.html
+        - name: ビデオを追加する
+          url: /experiences/inpage/adding-videos-page-experience.html
+        - name: コンパニオンコンポーネントの構成
+          url: /experiences/inpage/configuring-companion-components-page-experience.html
+        - name: エクスペリエンスの詳細の構成
+          url: /experiences/inpage/configuring-details-page-experience.html
+        - name: エクスペリエンスの設定の構成
+          url: /experiences/inpage/configuring-settings-page-experience.html
+        - name: ビデオダウンロードの設定
+          url: /experiences/inpage/configuring-video-downloads-page-experience.html
+        - name: カスタムテーマの作成
+          url: /experiences/inpage/creating-custom-themes-page-experiences.html
+        - name: ページ内エクスペリエンスのカスタマイズ
+          url: /experiences/inpage/customizing-page-experience.html
+        - name: スタイルのカスタマイズ
+          url: /experiences/inpage/customizing-style-page-experience.html
+        - name: ページはめ込みエクスペリエンステンプレートの概要
+          url: /experiences/inpage/overview-gallery-page-experience-templates.html
+        - name: '概要:ページ内エクスペリエンスの作成と公開'
+          url: /experiences/inpage/overview-creating-editing-and-publishing-page-experiences.html
+        - name: プレビューと公開
+          url: /experiences/inpage/previewing-and-publishing-page-experience.html
+        - name: アナリティクスの確認
+          url: /experiences/inpage/reviewing-page-experience-analytics.html
+        - name: 行動を促す分析の確認
+          url: /experiences/inpage/reviewing-page-experience-calls-action-analytics.html
+        - name: アナリティクスダッシュボードの確認
+          url: /experiences/inpage/reviewing-page-experience-analytics-dashboard.html
+        - name: 動画分析の確認
+          url: /experiences/inpage/reviewing-page-experience-video-analytics.html
+        - name: ギャラリーテンプレートの更新
+          url: /experiences/portal/updating-gallery-templates.html
+        - name: ダイナミックビデオオーバーライドを使用する
+          url: /experiences/inpage/using-dynamic-video-overrides-page-experience.html
+    - name: ライブイベント
+      url: /experiences/live/index.html
+      docs:
+      - name: 'ライブインページへのピジョンホールの追加'
+        url: /experiences/live/adding-pigeonhole-live-event-page-experience.html
+      - name: 'ライブポータルへのピジョンホールの追加'
+        url: /experiences/live/adding-pigeonhole-live-event-portal-experience.html
+      - name: カスタムドメインの割り当て
+        url: /experiences/portal/assigning-custom-domain-portal-experience.html
+      - name: アクセスの制御
+        url: /experiences/portal/controlling-access-portal-experience.html
+      - name: ライブイベントインページエクスペリエンスの作成
+        url: /experiences/live/creating-live-event-page-experience.html
+      - name: ライブイベントポータルエクスペリエンスの作成
+        url: /experiences/live/creating-live-event-portal-experience.html
+      - name: ライブイベント状態の作成
+        url: /experiences/live/creating-live-event-state-portal-event-experience.html
+      - name: イベント後の状態の作成
+        url: /experiences/live/creating-post-event-state-portal-event-experience.html
+      - name: イベント前の状態の作成
+        url: /experiences/live/creating-pre-event-state-portal-event-experience.html
+      - name: ライブイベントポータル設定のカスタマイズ
+        url: /experiences/live/customizing-live-event-portal-settings.html
+      - name: プレビューと公開
+        url: /experiences/portal/previewing-and-publishing-portal-experience.html
+
+    - name: ランディングページ
+      url: /experiences/landing/index.html
+      docs:
+      - name: カスタムドメインの割り当て
+        url: /experiences/portal/assigning-custom-domain-portal-experience.html
+      - name: ランディングページエクスペリエンスの作成
+        url: /experiences/landing/creating-landing-page-experience.html
+      - name: ギャラリーリードデータのエクスポート
+        url: /experiences/portal/exporting-gallery-lead-data.html
+      - name: プレビューと公開
+        url: /experiences/portal/previewing-and-publishing-portal-experience.html
+      - name: リードフォームの使用
+        url: /experiences/portal/using-lead-form-portal-experience.html
+      - name: サイトエディタを使用してエクスペリエンスをカスタマイズする
+        url: /experiences/portal/using-site-editor-customize-portal-experience.html
+- section: 
+  name: 全般的
+  url: /general/index.html
+  docs:
+    - name: ギャラリーのシステム要件
+      url: /general/gallery-system-requirements.html
+    - name: Brightcoveギャラリーの問題のトラブルシューティング
+      url: /general/troubleshooting-brightcove-gallery-issues.html
+    - name: Brightcoveギャラリーのクッキー
+      url: /general/brightcove-gallery-cookies.html
+- section: 
+  name: ギャラリーの設定
+  url: /settings/index.html
+  docs:
+    - name: ギャラリー設定の構成
+      url: /settings/configuring-gallery-settings.html
+    - name: YouTubeの設定を構成する
+      url: /settings/configuring-youtube-settings.html
+    - name: アクセス制御プロファイルの設定
+      url: /settings/configuring-access-control-profiles.html
+    - name: カスタムドメインと SSL の設定
+      url: /settings/configuring-custom-domains-and-ssl.html
+    - name: Auth0 でのポータル・エクスペリエンスの保護
+      url: /settings/securing-portal-experience-auth0.html
+    - name: Okta でのポータルエクスペリエンスの保護
+      url: /settings/securing-portal-experience-okta.html
+    - name: SSL を使用したポータルエクスペリエンスの保護
+      url: /settings/securing-portal-experience-ssl.html
+    - name: ADFS を使用したシングルサインオンの構成
+      url: /settings/configuring-single-sign-active-directory-federation-services.html
+- section: 
+  name: 開発者
+  url: /develop/index.html
+  docs:
+    - name: ページ内エクスペリエンスコードスニペット
+      url: /develop/page-experience-code-snippets.html
+    - name: ページ内エクスペリエンスカスタムCSSリファレンス
+      url: /develop/page-experiences-custom-css-reference.html
+    - name: CMSへのページ内エクスペリエンスの埋め込み
+      url: /develop/embedding-brightcove-page-experiences-cms.html
+    - name: '概要:ページ内エクスペリエンス API'
+      url: /develop/overview-page-experience-api.html
+    - name: '概要:ページ内エクスペリエンスクライアント API'
+      url: /develop/overview-page-experience-client-api.html
+    - name: ページ内エクスペリエンス API エラーリファレンス
+      url: /develop/page-experience-api-error-reference.html
+    - name: ページ内エクスペリエンスクライアント API サンプル
+      url: /develop/page-experience-client-api-sample.html
+    - name: '「クイックスタート:ページ内エクスペリエンスプラットフォーム (REST) API'
+      url: /develop/quick-start-page-experience-platform-rest-api.html
+    - name: 'インページエクスペリエンスプラットフォームAPIリファレンス'
+      url: /develop/reference.html
+    - name: 'ページ内エクスペリエンスクライアント API リファレンス'
+      url: 'https://docs.brightcove.com/in-page-exerience-client-api/ClientApi.html'
+- section: 
+  name: トレーニング
+  url: /training/index.html
+  docs:
+    - name: ギャラリー・トレーニング・ビデオ
+      url: /training/gallery-training-videos.html
+    - name: 'トレーニング:ギャラリーの紹介'
+      url: /training/training-demand-introduction-gallery.html
+    - name: 'トレーニング:ポータル・エクスペリエンスの構築'
+      url: /training/training-demand-building-portal-experiences-using-gallery.html
+    - name: 'トレーニング:ページ内エクスペリエンスの構築'
+      url: /training/training-demand-building-page-experiences-using-gallery.html
+    - name: Brightcove Universityトレーニングコース
+      url: /training/brightcove-university.html
+- section: 
+  name: リリースノート
+  url: /release-notes/index.html
+  docs:
+    - name: ギャラリーリリースノート
+      url: /release-notes/gallery-release-notes.html
+    - name: ギャラリーテンプレートのリリースノート
+      url: /release-notes/gallery-template-release-notes.html
+- section: 
+  name: サポート
+  url: /support/index.html
+  docs:
+    - name: 'Brightcoveのシステムステータスページの表示'
+      url: '/support/viewing-brightcove-system-status-page.html'
+    - name: 'サポートケースを開く'
+      url: '/support/opening-case-with-brightcove-support.html'
+    - name: 'サポートポータルのパスワードをリセットする'
+      url: '/support/reset-support-portal-password.html'
+    - name: '営業へのお問い合わせ'
+      url: '/support/contact-sales.html'
+# TODO correct and add additional sections/pages
+# TODO note that the order of items here determines the order in navigation
+# TODO indentation in YAML is crucial and must be with spaces (not tabs!)

@@ -1,3 +1,7 @@
+---
+layout: null
+---
+
 const myInitCallback = function() {
   if (document.readyState == 'complete') {
     // Document is ready when CSE element is initialized.

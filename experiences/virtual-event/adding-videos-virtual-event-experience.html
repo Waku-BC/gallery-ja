@@ -1,0 +1,82 @@
+---
+title: バーチャルイベントエクスペリエンスに動画を追加する
+parent: Virtual Event 
+grandparent: Experiences
+description: In this topic you will learn how to add videos to a Virtual Event Experience.
+layout: staging
+---
+<article class="bcls-article">
+  <h1>仮想イベントエクスペリエンスへのビデオの追加</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>ギャラリーコレクションエディターを使用して、バーチャルイベントエクスペリエンスに表示するビデオを選択できます。他のポータルタイプのエクスペリエンスと同様に、動画はコレクションに整理されます。</p>
+    <p>仮想イベントエクスペリエンスにビデオを追加するには、をクリックします<strong>ビデオ</strong>左側のナビゲーションで。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/site-editor-videos-menu.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="layout">ビデオ収集組織</h2>
+    <p>コレクションの順序によって、仮想イベントのホームページにコレクションがどのように表示されるかが決まります。</p>
+    <aside class="bcls-aside bcls-aside--information">注:コレクションの作成とコレクションへのビデオの追加については、「<a href="/experiences/portal/adding-videos-portal-experience.html">ポータルエクスペリエンスへのビデオの追加」を参照してください</a>。</aside>
+    <p>Virtual Event テンプレートには、サンプルサイトで指定されたビデオが表示される主な領域が 4 つあります。</p>
+    <ol>
+      <li><strong>注目のコレクション</strong> -通常、<a href="/experiences/virtual-event/using-simulated-live-videos.html"></a>イベント全体に表示されるライブコンテンツやシミュレーションコンテンツをフィーチャーするために使用されます。これは、最適なエクスペリエンスを得るために、最も早い時間から最新までのライブ時間に基づいて注文するのが理想的です。</li>
+      <li><strong>プライマリコレクション</strong> -すべてを含めることができますが、通常は特定の VOD ブレイクアウトや追加の注意が必要なコンテンツをフィーチャするために使用されます。</li>
+      <li><strong>セカンダリコレクション</strong> -特に注意が必要な特定のVODブレイクアウトやコンテンツを特集するために通常使用されるもの以外は何でも使用できます。</li>
+      <li><strong>トラック</strong> -通常 VOD コンテンツに使用されます</li>
+    </ol>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/collection-layout-example.png" /></figure>
+    <aside class="bcls-aside bcls-aside--information">注:注目のコレクション、プライマリ、セカンダリーコレクションでは、最大 24 本のビデオがサポートされます。</aside><aside class="bcls-aside bcls-aside--information">注:プライマリ/セカンダリコレクションの上にタイトルを挿入するには、構成ファイルに静的コンテンツオブジェクトを追加します。詳細については、<a href="/experiences/virtual-event/working-static-content.html">静的コンテンツの操作を参照してください</a>。</aside>
+    <p>ギャラリーでコレクションを注文する場合、コレクションは次の方法で順序付けする必要があります。</p>
+    <ul>
+      <li>コレクション 1-注目のコレクション</li>
+      <li>コレクション2-プライマリコレクション</li>
+      <li>コレクション3-二次コレクション</li>
+      <li>コレクション 4-トラック</li>
+    </ul>
+    <p>上記の例では、次のようにコレクションが作成されます。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/collection-order-example.png" /></figure>
+    <p>トラックを構成するには、いくつかの追加手順が必要です。トラックについては、以下の「<a href="#tracks">イベントトラックの設定</a>」セクションで説明しています。<strong></strong><strong></strong>プレイリストまたはカスタムベースのコレクションを使用できますが、<a href="/experiences/virtual-event/using-role-based-access-control.html"></a>イベントでロールベースのアクセス制御を使用して、特定のロールのユーザーが一部のコンテンツを見ると、プレイリストはロールベースのアクセス制御フィルタリングをサポートしていないため、プレイリストは使用しないでください。</p>
+    <p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/collection-criteria-example.png" /></figure>
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="tracks">イベントトラックを設定する</h2>
+    <p>トラックを作成するときは、以下のガイドラインに従って、エクスペリエンスに正しく表示されることを確認してください。</p>
+    <ul>
+      <li>コレクション名は仮想イベントテンプレートに表示されるため、意味のある名前を使用してください
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/collection-tracks-ui-sample.png" /></figure>
+      </li>
+      <li>トラックコレクションはネストされたコレクションになり、このコレクションにはビデオは表示されません</li>
+      <li>tracks コレクションは 4 番目のコレクションでなければなりません</li>
+      <li>各トラックのトラックコレクションの下に子コレクションを作成する
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/collection-tracks-example.png" /></figure>
+      </li>
+      <li>コレクションを作成するときにプレイリストを使用しないでください</li>
+      <li>トラックセクションの位置は設定ファイルで指定され、<a href="/experiences/virtual-event/positioning-content-homepage.html"></a><code translate="No">breakout_collection</code>設定ファイル内のオブジェクトを編集することで変更できます。</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="track-url">トラックの URL の設定</h2>
+    <p>コレクションが作成されたら、ヘッダーの On-Demand Sessions リンクが正しい URL にダイレクトされるように、設定ファイルを更新する必要があります。トラックコレクション (コレクション 4) に使用される名前は、トラックページにアクセスするための URL で使用されます。URL が正しく設定されていることを確認するには、次の点を確認してください。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>設定ファイルを確認し、<code translate="No">breakout_collection</code>オブジェクトを見つけます。</li>
+      <li> <code translate="No">collection</code>パラメーターには、トラックページの URL が含まれます。たとえば、<br/>
+        <pre><code translate="No">
+"breakout_collection": {
+    "collection": "/category/videos/tracks",
+    "insert_target": ".bc-on-demand-section",
+    "insert_mode": "after"
+},
+          </code></pre>
+      </li>
+      <li><code translate="No">collection</code> URL の最後のパスは、トラックコレクション (コレクション 4) の名前を反映する必要があります。たとえば、トラックコレクション（コレクション4）の名前が「Sessions」の場合、コレクションパラメーターは次のように更新されます。<br/>
+        <pre><code translate="No">
+"collection": "/category/videos/sessions",      
+          </code></pre>
+      </li>
+      <li>設定を確認するには、ヘッダーの [オンデマンドセッション] リンクをクリックします。トラックセッションが表示されます。トラックをクリックすると、トラック内のビデオが開きます。404 エラーが表示される場合は、設定に問題があります。</li>
+    </ol>
+    <p>&nbsp;</p>
+  </section>
+</article>

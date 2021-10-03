@@ -1,0 +1,37 @@
+---
+title: バーチャルイベントエクスペリエンスのフッターのカスタマイズ
+parent: Virtual Event 
+grandparent: Experiences
+layout: staging
+---
+<article class="bcls-article">
+  <h1>仮想イベントエクスペリエンスのフッターのカスタマイズ</h1>
+  <summary>このトピックでは、バーチャルイベントエクスペリエンスページのフッターをカスタマイズする方法について説明します。</summary>
+  <section class="bcls-section">
+    <p>フッターはすべてのページの下部に表示されます。フッターは、設定ファイルの値から作成されます。設定ファイルの各フッター項目には、次の項目が関連付けられます。</p>
+    <ul>
+      <li>リンク URL</li>
+      <li>ラベル</li>
+      <li>グループ</li>
+    </ul>
+    <p>グループは、ラベル/リンクがフッターに表示される場所を制御するために使用されます。次の 4 つのグループがあります。</p>
+    <ul>
+      <li> <strong>グループ 0</strong> -HTML コールアウトに使用</li>
+      <li><strong>グループ 1</strong> -法律上のテキストと著作権情報に使用されます</li>
+      <li><strong>グループ 2 と 3</strong> -リンクのリストに使用 (最大 5 つのリンクを使用することを推奨)</li>
+    </ul>
+    <p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/footer-example.png" /></figure>
+    </p>
+    <p>フッターに表示されるソーシャルアイコンは、<code translate="No">social</code>設定ファイルでオブジェクトを編集することで編集/削除できます。詳細については、「<a href="/experiences/virtual-event/configuring-social-icons-virtual-event-experience.html">仮想イベントエクスペリエンスのソーシャルアイコンの設定」を参照してください</a>。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="links">フッターへのリンクの追加</h2>
+    <p>フッターリンクは、<code translate="No">footer_links</code>構成ファイル内のオブジェクトを編集して構成します。</p>
+    <ul>
+      <li><code translate="No">link_url</code> -宛先 URL</li>
+      <li><code translate="No">label</code> -フッターに表示されるラベル</li>
+      <li><code translate="No">group</code> -リンクが表示されるグループ化</li>
+    </ul>
+  </section>
+</article>

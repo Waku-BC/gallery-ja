@@ -1,0 +1,141 @@
+---
+title: 仮想イベントビューアのエクスポートデータ
+description: このトピックでは、Analytics API を使用して仮想イベントの仮想イベントビューアデータをエクスポートする方法について説明します。
+parent: Virtual Event 
+grandparent: Experiences
+layout: staging
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">はじめに</h2>
+		<p>仮想イベントのレポートイベントは、特定のアカウントのアカウント、視聴者、動画分析に加え、デバイスや場所別に集計して確認できます。この情報は、視聴者のエンゲージメントを最大化するために、今後のバーチャルイベントをより適切に整理するのに役立ちます。</p>
+		<p>このデータは Analytics API を使用してダウンロードでき、JSON、CSV、または XLXS 形式で返すことができます。次のセクションでは、分析 API について簡単に説明します。その使用方法がすでにわかっている場合は、次のセクションに進んで仮想イベントの分析データを取得する方法を参照してください。</p>
+  </section>
+	<section class="bcls-section">
+		<h2 id="Analytics_API">アナリティクス API</h2>
+		<p><a href="https://apis.support.brightcove.com/">他のプラットフォーム API と同様に</a>、Analytics API は、プログラムで Video Cloud プラットフォームと対話できる RESTful API です。リクエストに含めるさまざまな URL パラメータに基づいて、分析データを返します。デフォルトでは、データはJSON形式で返されますが、代わりにスプレッドシートアプリで開くようにCSVまたはXLXSデータをリクエストできます。</p>
+		<aside class="bcls-aside bcls-aside--information">このドキュメントでは、仮想イベントの分析データを取得するために知っておく必要があることのみを取り上げていることに注意してください。その他の用途については、<a href="https://apis.support.brightcove.com/analytics-api/index.html"> Analytics API の一般的なドキュメントを参照してください</a>。</aside>
+		<h3>リクエストの仕方</h3>
+		<p>RESTful API へのリクエストは、ブラウザーが Web ページを取得するための URL へのリクエストと同じ方法で URL に対して行われます。ただし、API リクエストを単にブラウザに貼り付けることはできません。これは、リクエストが認証され（それにアクセスしています）、データを取得する権限があることを示すためです。しかし、あなたがそれを行うのに役立つ多くのツールがあります。ここに短いリストがあります：</p>
+		<ul>
+			<li><a href="https://apis.support.brightcove.com/general/use-insomnia-api-requests.html">Insomnia</a> (人気のあるクロスプラットフォームアプリ)</li>
+			<li><a href="https://apis.support.brightcove.com/general/use-postman-api-requests.html">Postman</a> (別の人気のあるクロスプラットフォームアプリ)</li>
+			<li><a href="https://apis.support.brightcove.com/general/concepts-api-tester.html"></a>ブライトコーブラーニングサービスによって作成されたオンライン API テスター</li>
+			<li><a href="https://apis.support.brightcove.com/getting-started/concepts-testing-tools-brightcove-apis.html#shell">api-tester.sh</a> (ブライトコーブラーニングサービスによって作成されたカールベースのシェルスクリプト)</li>
+		</ul>
+		<h3>要求の認証</h3>
+		<p>データを保護するために、Analytics API リクエストには、アクセストークンを含む認証ヘッダーを含める必要があります。</p>
+		<pre><code class="language-http" translate="No">Authorization: bearer <span class="bcls-input">your access token</span></code></pre>
+		<p>アクセストークンはどうやって手に入れますか？<a href="https://apis.support.brightcove.com/oauth/guides/getting-access-tokens.html">アクセストークンの取得ですべて読むことができますが</a>、簡単な答えは、少し準備をした後、上記のツール（およびその他多くのツール）がそれを手に入れるということです。</p>
+		<p>準備は取得することで構成されます<strong>クライアントの資格情報</strong>、で構成されています<code translate="no">クライアントID</code>と<code translate="no">client_secret</code>。これらは、<a href="https://studio.brightcove.com/products/videocloud/admin/oauthsettings"> Studio の管理ページを使用して取得できます</a>（アカウントの管理者になるか、管理者に依頼する必要があります）。</p>
+		<ol class="bcls-tasklist-restart">
+			<li>[ <span class="button-blue">新しいアプリケーションの登録] をクリックします</span>。</li>
+			<li>開いたダイアログで、名前として「Analytics」と入力します。</li>
+			<li>API を使用するアカウントを選択します。</li>
+			<li>
+				下<strong>公開されたBrightcoveAPI</strong>、 選択する<strong>読んだ</strong>下<strong>分析</strong>と<strong>ビデオを読む</strong>下<strong>CMS</strong>：
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/experiences/virtual-event/analytics-api-permissions.png" alt="API Permissions">
+					<figcaption class="bcls-caption--image">API のアクセス許可</figcaption>
+				</figure>
+			</li>
+			<li>[ <span class="button-blue">保存] をクリックします</span>。</li>
+			<li>
+				新しいダイアログに、<strong>クライアント ID </strong><strong>クライアントシークレットが表示されます</strong>。両方をコピーして、再び見つけることができる安全な場所に保存します。<aside class="bcls-aside bcls-aside--warning">このダイアログを閉じると、このクライアントシークレットを再度取得する方法はありません。それを失った場合は、新しいものを作成する必要があります。</aside>
+			</li>
+		</ol>
+		<h3>アクセストークン</h3>
+		<p>アクセストークンは、クライアントの認証情報を使用して別の Brightcove API から取得されます。この操作は自分で行うことができますが、前のセクションに示したツールのいずれかでクライアントの認証情報を取得し、アクセストークンを取得し、Analytics API リクエストとともに送信されるリクエストヘッダーに入力します。</p>
+	</section>
+  <section class="bcls-section">
+    <h2 id="API_request">アナリティクス API リクエスト</h2>
+    <p>アナリティクス API リクエストの形式は次のとおりです。</p>
+    <pre><code class="language-http" translate="No">http://analytics.api.brightcove.com/v1/data?accounts=<span class="bcls-input">{account1_id,account2_id}</span>
+&from=<span class="bcls-highlight">{yyyy-mm-dd}</span>
+&to=<span class="bcls-highlight">{yyyy-mm-dd}</span>
+&dimensions=viewer,video,country,city,region,device_type,protocol
+&fields=video,video.name,viewer,country,region,city,device_type,time,video_view,video_percent_viewed,video_seconds_viewed
+&sort=-video_view&limit=20&format=csv</code></pre>
+		<aside class="bcls-aside bcls-aside--information">リクエストURLに改行があってはならないことに注意してください！読みやすくするために、ここに改行が追加されています。</aside>
+		<h3>必要なパラメータ</h3>
+		<table class="bcls-table">
+			<caption class="bcls-caption--table">必須パラメータ</caption>
+			<thead class="bcls-table__head">
+					<tr>
+							<th>[パラメータ]</th>
+							<th>必要な値</th>
+							<th>オプション値</th>
+					</tr>
+			</thead>
+			<tbody class="bcls-table__body">
+					<tr>
+							<td><code translate="no">アカウント</code></td>
+							<td>1 つ以上のアカウント ID</td>
+							<td></td>
+					</tr>
+					<tr>
+							<td><code translate="no">寸法</code></td>
+							<td>
+								<ul>
+									<li><code translate="no">ビューア</code></li>
+									<!-- <li><code translate="no">application</code></li> -->
+								</ul>
+							</td>
+							<td>
+								<ul>
+									<li><code translate="no">アカウント</code></li>
+									<li><code translate="no">動画</code></li>
+									<li><code translate="no">国</code></li>
+									<li><code translate="no">領域</code></li>
+									<li><code translate="no">市</code></li>
+									<li><code translate="no">デバイスタイプ</code></li>
+									<li><code translate="no">プロトコル</code></li>
+								</ul>
+							</td>
+					</tr>
+			</tbody>
+	</table>
+	<p>見る<a href="https://apis.support.brightcove.com/analytics/getting-started/analytics-api-overview-dimensions-fields-and-parameters.html#params">パラメーター</a>日付範囲の設定、結果の並べ替え、応答形式の設定などに使用できるいくつかの追加のオプションパラメータ。</p>
+
+  </section>
+	<section class="bcls-section">
+		<h2 id="where_filters">フィルターをかける場所</h2>
+		<p><code translate="no">Where</code>パラメーターを使用して結果をフィルタリングできます。詳細については、「<a href="https://apis.support.brightcove.com/analytics/getting-started/analytics-api-overview-dimensions-fields-and-parameters.html#filterValues"></a>フィルターの場所」を参照してください。</p>
+	</section>
+	<section class="bcls-section">
+		<h2 id="fields">フィールド</h2>
+		<h3>プレイヤーから直接収集</h3>
+		<ul>
+			<li><code translate="no">ビューア</code>：イベントビューア（SSO IDまたはデバイスID、またはユーザーエージェントとIPに基づく一意の文字列）。<code translate="no">ユーザー</code>分野</li>
+			<!-- <li><code translate="no">application</code>: virtual event experience id, if null default value = <code translate="no">account_id</code></li> -->
+			<li><code translate="no">時間</code>：最後に受信したイベントのタイムスタンプ</li>
+			<li><code translate="no">動画</code></li>
+			<li><code translate="no">国</code></li>
+			<li><code translate="no">領域</code></li>
+			<li><code translate="no">市</code></li>
+			<li><code translate="no">デバイスタイプ</code></li>
+		</ul>
+		<h3>集約されたメトリック</h3>
+		<ul>
+			<li><code translate="no">video_view</code> : <code translate="no"> video_view</code>がプレイヤーによって送信された回数の合計（<code translate="no">video_view </code><strong>はそうではないことに注意してください</strong>視聴者がビデオを一時停止して再起動したとき、またはページを更新せずにビデオを複数回視聴したときに送信されます）</li>
+		</ul>
+		<h3>計算フィールド</h3>
+		<ul>
+			<li>
+				<code translate="no">video_seconds_viewed</code>：
+				<ul>
+					<li>順序に関係なく、CollectorAPIが受け取る最大範囲値</li>
+					<li>20 秒を超える範囲を記述するイベントは Analytics システムによって破棄されます。プレイヤーが 20 秒以下の範囲を送信するように正しく計測されていない場合、不正確な値になる可能性があります。<a href="https://apis.support.brightcove.com/data-collection/overview-data-collection-api-v2.html">概要を参照してください。データ収集 API</a></li>
+				</ul>
+			</li>
+			<li><code translate="no">video_percent_viewed</code>：video_seconds_viewed / video_duration * 100（ビデオの長さがデータコレクターに送信されなかった場合、この値は欠落しているか不正確になります）</li>
+			<li><code translate="no">video_engagement_xx</code>：xx video_percent_viewedでの合計視聴回数（xx = 1、25、50、75、または100）</li>
+		</ul>
+		<details>
+			<summary>サンプルAPI応答（JSON）</summary>
+<pre><code class="language-json" translate="no">{ 4 "item_count": 1, 5 "items": [ 6 { 7 "viewer": "test@brightcove.com", 8 "country": "GB", 9 "video_seconds_viewed": 253, 10 "city": "London", 11 "video_percent_viewed": 527.08, 12 "device_type": "other", 13 "video": "70701475639202", 14 "video_view": 46, 15 "region": "GB-ENG" 16 } 17]、18「要約」：{ 19 "video_seconds_viewed": 253, 20 "video_percent_viewed": 527.08, 21 "video_view": 46 22 } 23}</code></pre>
+		</details>
+	</section>
+</article>

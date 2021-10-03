@@ -1,0 +1,80 @@
+---
+title: 仮想イベントエクスペリエンスの外観と動作のカスタマイズ
+parent: Portal 
+grandparent: Experiences
+description: In this topic you will learn how to customize the appearance and behavior of a Virtual Event Experience.
+layout: staging
+---
+<article class="bcls-article">
+  <h1>仮想イベントエクスペリエンスの外観と動作のカスタマイズ</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>外観と動作の設定を構成するには、エクスペリエンスを編集して[ <strong>外観と動作</strong>左側のナビゲーションで。次の設定を使用できます。</p>
+    <ul>
+      <li><a href="#header_footer">ヘッダーとフッター</a> -エクスペリエンスのカスタムヘッダー/フッターを構成する</li>
+      <li><a href="#custom">カスタム</a> -カスタム CSS ファイルと JavaScript ファイルを使用する</li>
+      <li><a href="#background">背景画像とビデオ</a> -背景画像またはビデオを構成する</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="header_footer">カスタムヘッダー/フッターHTMLの設定</h2>
+    <p>Galleryはサイトに対しカスタムヘッダーやカスタムフッターを使用するオプションを提供します。これにより、仮想イベントエクスペリエンスをカスタマイズして、企業サイトのルックアンドフィールにより厳密に一致させることができます。カスタムヘッダー/フッターはアカウントレベルで設定することも可能です。アカウントレベルでカスタムヘッダー/フッターを構成する方法については、「<a href="/settings/configuring-gallery-settings.html">ギャラリー設定の構成</a>」を参照してください。</p>
+    <p>カスタムヘッダーまたはフッターを使用するように仮想イベントエクスペリエンスを構成するには、次の手順に従います。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>サイトに使用するヘッダー/フッターをデザインします。ヘッダー/フッターには、任意の有効なHTML、JavaScriptまたはCSSコードを含めることができます。</li>
+      <li>クリック<strong>外観と動作&gt;ヘッダーとフッター</strong>左側のナビゲーションで。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/portal/node18667-header-footer.png" /></figure>
+      </li>
+      <li>ヘッダーHTMLを[<strong>Custom Header HTML</strong>]フィールドに貼り付けます。</li>
+      <li>カスタムヘッダーの下にデフォルトのテンプレートヘッダーを表示するには、[ <strong>カスタムヘッダーの下にデフォルトヘッダーを含める</strong> ] オプションを選択します。</li>
+      <li>フッター HTML を [ <strong>カスタムフッター HTML</strong> ] フィールドに貼り付けます。</li>
+      <li>カスタムフッターの下にデフォルトのテンプレートフッターを表示するには、[ <strong>カスタムフッターの下にデフォルトのフッターを含める</strong> ] オプションを選択します。</li>
+      <li>[ <strong>保存] をクリックします</strong>。</li>
+    </ol>
+    <div class="BCL-subsection">
+      <h3>カスタムヘッダーとフッターの使用に関する注意事項</h3>
+      <ul>
+        <li>ギャラリーは、ヘッダー/フッターに提供されているHTMLで検証を行いません</li>
+        <li>ヘッダーとフッターのHTMLには明示的な文字制限はありません</li>
+        <li>外部 CSS および JavaScript ファイルがサポートされています</li>
+        <li>コードはレスポンシブ設計原則に従う必要があります。そのため、デバイス間で適切に拡張できます</li>
+        <li>サイトがブートストラップを使用しているときにCSSの競合が見られました（ギャラリーもブートストラップを使用しています）。競合をチェックして解決してください</li>
+      </ul>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="custom">カスタム設定の構成</h2>
+    <p>カスタム設定は、サイトのルックアンドフィールをカスタマイズする機能を提供します。カスタム設定を構成するには、をクリックします<strong>外観と動作&gt;カスタム</strong>左側のナビゲーションで。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/portal/node18667-custom-settings.png" /></figure>
+    <p>以下の設定が利用できます。</p>
+    <ul>
+      <li><strong>カスタム CSS URL</strong> -スタイルをカスタマイズするためのカスタム.css ファイルの場所を指定するために使用します。[CSS <strong>を表示]</strong>リンクをクリックして、サイトのスタイル設定に現在使用されている CSS ファイルを表示します。</li>
+      <li><strong>カスタム JavaScript URL</strong> -サイトのスタイルや動作をカスタマイズするためのカスタム.jsファイルの場所を指定するために使用されます。</li>
+      <li><strong>カスタムファビコン URL</strong> -サイトで使用するファビコンの場所を指定するために使用されます。ファビコンをサポートするブラウザでは、通常、ページのブラウザタブに、ブックマークのリストでページ名の横にファビコンが表示されます。</li>
+      <li><strong>カスタムモバイルアプリアイコン</strong> -サイトがデバイスのホーム画面に保存されるときに、ホーム画面のアイコンとして使用される画像を選択するために使用します。Brightcoveでは、高解像度（1024 ピクセル x 1024 ピクセルを推奨）をアップロードすることをお勧めします。正方形の画像とギャラリーは画像を拡大縮小し、お使いのデバイスに最適なバージョンを使用します。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/portal/node18667-app-icon.png" /></figure>
+      </li>
+      <li><strong>カスタム応答ヘッダー</strong> -ポータルへの要求に応答して送信される HTTP ヘッダーを入力します。たとえば、コンテンツセキュリティポリシー (CSP) または HTTP 厳密トランスポートセキュリティ (HSTS) を追加するためにヘッダーを追加できます。</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="background">背景画像またはビデオの構成</h2>
+    <p>ギャラリーには、サイトのカスタム背景画像またはビデオを表示するオプションがあります。背景画像またはビデオを構成するには、をクリックします<strong>外観と動作&gt;背景画像とビデオ</strong>左側のナビゲーションで。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/site-editor-background-image.png" /></figure>
+    <h3>背景画像の追加</h3>
+    <ol class="bcls-tasklist-restart">
+      <li>イメージを指定するには、次の操作を実行します。
+        <ul>
+          <li>ファイルシステムからイメージをドラッグし、ドロップ領域にドロップします</li>
+          <li>[ <strong>参照</strong> ] をクリックし、ファイルシステムからイメージを選択します。</li>
+          <li>リモートイメージファイルの URL を入力してください</li>
+        </ul>
+      </li>
+      <li>[ <strong>保存] をクリックします</strong>。</li>
+    </ol>
+    <p>[ <strong>削除</strong> ] をクリックしてイメージを削除します。</p>
+    <h3>背景ビデオを追加する</h3>
+    <p>Video Cloud ビデオは、バックグラウンドビデオとしても使用できます。Video Cloud ビデオ ID を [ <strong>ビデオ ID]</strong>フィールドに貼り付け、[ <strong>保存] をクリックします</strong>。</p>
+    <aside class="bcls-aside bcls-aside--information">注:ビデオ ID が無効の場合、アップロードされた背景画像またはデフォルトの背景画像が表示されます。</aside>
+  </section>
+</article>

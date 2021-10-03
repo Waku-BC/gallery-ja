@@ -1,627 +1,11 @@
-﻿<!doctype html>
-<html lang="ja">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  
-  <title>ページ内エクスペリエンスのカスタム CSS リファレンス</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
-
-<body class="body">
-
-<header>
-  <div class="div-header">
-    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">Brightcove ギャラリー<sup>™</sup></span></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">言語の選択</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-      <option value="">Brightcove のその他のドキュメント</option>
-      
-        
-          <option value="https://support.brightcove.com">ドキュメントホーム</option>
-        
-      
-        
-          <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
-        
-      
-        
-          <option value="https://beacon.support.brightcove.com">Brightcove Beacon</option>
-        
-      
-        
-          <option value="https://campaign.support.brightcove.com">Brightcove キャンペーン</option>
-        
-      
-        
-          <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-        
-      
-        
-          <option value="https://live.support.brightcove.com">Brightcove Live</option>
-        
-      
-        
-          <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-        
-      
-        
-          <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-        
-      
-        
-          <option value="https://social.support.brightcove.com">Brightcove ソーシャル</option>
-        
-      
-        
-          <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-        
-      
-        
-          <option value="https://player.support.brightcove.com">Brightcove のプレーヤー開発</option>
-        
-      
-        
-          <option value="https://apis.support.brightcove.com">Video CloudプラットフォームAPI</option>
-        
-      
-        
-          <option value="https://sdks.support.brightcove.com">ビデオクラウドデバイス SDK</option>
-        
-      
-        
-          <option value="https://integrations.support.brightcove.com">統合および CMS コネクタ</option>
-        
-      
-        
-          <option value="https://general.support.brightcove.com">ビデオクラウドの一般情報</option>
-        
-      
-        
-          <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-        
-      
-    </select>
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="サポート"/> サポートへのお問い合わせ</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="システムステータス"/> システムステータス</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">ホーム</a></li>
-      
-      
-      
-      <li class="breadcrumb-item"><a href="/develop/">開発する</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">ページ内エクスペリエンスのカスタム CSS リファレンス</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-    <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Brightcove のその他のドキュメント</option>
-          
-            
-              <option value="https://support.brightcove.com">ドキュメントホーム</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Brightcove Audience</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Brightcove ビーコン</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Brightcove キャンペーン</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove ・ライブ</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove ギャラリー</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove ソーシャル</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Brightcove のプレーヤー開発</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">Video CloudプラットフォームAPI</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">ビデオクラウドデバイス SDK</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">統合および CMS コネクタ</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">ビデオクラウドの一般情報</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-        <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">ホーム</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/get-started/index.html">はじめに<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/get-started/step-step-creating-and-publishing-portal-experience.html">ポータルエクスペリエンスの作成</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/step-step-creating-and-publishing-page-experience.html">ページ内エクスペリエンスの作成</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/creating-and-managing-gallery-experiences.html">エクスペリエンスの作成と管理</a></li>
-                  
-                
-                  
-                    <li><a href="/training/gallery-training-videos.html">ギャラリー・トレーニング・ビデオ</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-gallery.html">Brightcove ギャラリーの入門</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-gallery-experiences.html">ギャラリーエクスペリエンスの概要</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-introduction-gallery.html">トレーニング:ギャラリーの紹介</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">トレーニング:ポータル・エクスペリエンスの構築</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">トレーニング:ページ内エクスペリエンスの構築</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/experiences/index.html">エクスペリエンス <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/portal/index.html">ポータル<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/portal/adding-video-cloud-videos-portal-experience.html">ビデオクラウド動画を追加する</a></li>
-                        
-                        <li><a href="/experiences/portal/adding-videos-portal-experience.html">ビデオを追加する</a></li>
-                        
-                        <li><a href="/experiences/portal/adding-youtube-videos-portal-experience.html">YouTube 動画を追加する</a></li>
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">カスタムドメインの割り当て</a></li>
-                        
-                        <li><a href="/experiences/portal/changing-player-layout-portal-experience.html">プレーヤーのレイアウトを変更する</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-calls-action-portal-experience.html">アクションへの呼び出しの設定</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-search-engine-optimization-settings-portal-experience.html">SEO設定の構成</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-details-portal-experience.html">エクスペリエンスの詳細の設定</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-third-party-tracking-portal-experience.html">サードパーティトラッキングの設定</a></li>
-                        
-                        <li><a href="/experiences/portal/controlling-access-portal-experience.html">アクセスの制御</a></li>
-                        
-                        <li><a href="/experiences/portal/overview-creating-editing-and-publishing-portal-experiences.html">ポータルエクスペリエンスの作成、編集、公開</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-appearance-and-behavior-portal-experience.html">外観と動作のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-catalogue-template-settings.html">カタログテンプレート設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-chronicle-template-settings.html">クロニクルテンプレート設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-content-portal-experience-pages.html">ポータル・ページのコンテンツのカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-marquee-template-settings.html">マーキーテンプレート設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-player-and-lead-form-settings-portal-experience.html">プレーヤーおよびリードフォーム設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-site-configuration-portal-experience.html">サイト構成のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-site-features-portal-experience.html">サイト機能のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-social-settings-portal-experience.html">ソーシャル設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-style-portal-experience.html">スタイルのカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-video-and-playback-settings-portal-experience.html">ビデオと再生設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-video-settings-portal-experience.html">ビデオ設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/downloading-videos-portal-experience.html">ビデオのダウンロード</a></li>
-                        
-                        <li><a href="/experiences/portal/exporting-gallery-lead-data.html">ギャラリーリードデータのエクスポート</a></li>
-                        
-                        <li><a href="/experiences/portal/indexing-gallery-portal-experience.html">ポータルエクスペリエンスのインデックス作成</a></li>
-                        
-                        <li><a href="/experiences/portal/overview-gallery-portal-templates.html">ギャラリーポータルのテンプレートの概要</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">プレビューと公開</a></li>
-                        
-                        <li><a href="/experiences/portal/updating-gallery-templates.html">ギャラリーテンプレートの更新</a></li>
-                        
-                        <li><a href="/experiences/portal/using-lead-form-portal-experience.html">リードフォームの使用</a></li>
-                        
-                        <li><a href="/experiences/portal/using-custom-fonts-portal-experience.html">カスタムフォントを使用する</a></li>
-                        
-                        <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">サイトエディタを使用したエクスペリエンスのカスタマイズ</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/inpage/index.html">ページ内<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/inpage/adding-components-page-experience.html">コンポーネントの追加</a></li>
-                        
-                        <li><a href="/experiences/inpage/adding-interactions-page-experience.html">インタラクションの追加</a></li>
-                        
-                        <li><a href="/experiences/inpage/adding-videos-page-experience.html">ビデオを追加する</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-companion-components-page-experience.html">コンパニオンコンポーネントの構成</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-details-page-experience.html">エクスペリエンスの詳細の設定</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-settings-page-experience.html">エクスペリエンスの設定の構成</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-video-downloads-page-experience.html">ビデオダウンロードの設定</a></li>
-                        
-                        <li><a href="/experiences/inpage/creating-custom-themes-page-experiences.html">カスタムテーマの作成</a></li>
-                        
-                        <li><a href="/experiences/inpage/customizing-page-experience.html">ページ内エクスペリエンスのカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/inpage/customizing-style-page-experience.html">スタイルのカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/inpage/overview-gallery-page-experience-templates.html">ページ内エクスペリエンステンプレートの概要</a></li>
-                        
-                        <li><a href="/experiences/inpage/overview-creating-editing-and-publishing-page-experiences.html">概要:ページ内エクスペリエンスの作成と公開</a></li>
-                        
-                        <li><a href="/experiences/inpage/previewing-and-publishing-page-experience.html">プレビューと公開</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-analytics.html">アナリティクスの確認</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-calls-action-analytics.html">行動を促す分析の確認</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-analytics-dashboard.html">アナリティクスダッシュボードの確認</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-video-analytics.html">動画分析の確認</a></li>
-                        
-                        <li><a href="/experiences/portal/updating-gallery-templates.html">ギャラリーテンプレートの更新</a></li>
-                        
-                        <li><a href="/experiences/inpage/using-dynamic-video-overrides-page-experience.html">ダイナミックビデオオーバーライドを使用する</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/live/index.html">ライブイベント<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/live/adding-pigeonhole-live-event-page-experience.html">ライブインページにPigeonholeを追加する</a></li>
-                        
-                        <li><a href="/experiences/live/adding-pigeonhole-live-event-portal-experience.html">ライブポータルへのピジョンホールの追加</a></li>
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">カスタムドメインの割り当て</a></li>
-                        
-                        <li><a href="/experiences/portal/controlling-access-portal-experience.html">アクセスの制御</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-page-experience.html">ライブイベントインページエクスペリエンスの作成</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-portal-experience.html">ライブイベントポータルエクスペリエンスの作成</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-state-portal-event-experience.html">ライブイベント状態の作成</a></li>
-                        
-                        <li><a href="/experiences/live/creating-post-event-state-portal-event-experience.html">イベント後の状態の作成</a></li>
-                        
-                        <li><a href="/experiences/live/creating-pre-event-state-portal-event-experience.html">イベント前の状態の作成</a></li>
-                        
-                        <li><a href="/experiences/live/customizing-live-event-portal-settings.html">ライブイベントポータルの設定のカスタマイズ</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">プレビューと公開</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/landing/index.html">ランディングページ<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">カスタムドメインの割り当て</a></li>
-                        
-                        <li><a href="/experiences/landing/creating-landing-page-experience.html">ランディングページエクスペリエンスの作成</a></li>
-                        
-                        <li><a href="/experiences/portal/exporting-gallery-lead-data.html">ギャラリーリードデータのエクスポート</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">プレビューと公開</a></li>
-                        
-                        <li><a href="/experiences/portal/using-lead-form-portal-experience.html">リードフォームの使用</a></li>
-                        
-                        <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">サイトエディタを使用したエクスペリエンスのカスタマイズ</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/general/index.html">一般<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/general/gallery-system-requirements.html">ギャラリーのシステム要件</a></li>
-                  
-                
-                  
-                    <li><a href="/general/troubleshooting-brightcove-gallery-issues.html">Brightcove ギャラリーの問題のトラブルシューティング</a></li>
-                  
-                
-                  
-                    <li><a href="/general/brightcove-gallery-cookies.html">Brightcove ギャラリーのクッキー</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/settings/index.html">ギャラリーの設定<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/settings/configuring-gallery-settings.html">ギャラリー設定の構成</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-youtube-settings.html">YouTubeの設定を構成する</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-access-control-profiles.html">アクセス制御プロファイルの設定</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-custom-domains-and-ssl.html">カスタムドメインと SSL の設定</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-auth0.html">Auth0 でのポータル・エクスペリエンスの保護</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-okta.html">Okta でのポータルエクスペリエンスの保護</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-ssl.html">SSL を使用したポータルエクスペリエンスの保護</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-single-sign-active-directory-federation-services.html">ADFS を使用したシングルサインオンの構成</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/develop/index.html">開発者<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/develop/page-experience-code-snippets.html">ページ内エクスペリエンスコードスニペット</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experiences-custom-css-reference.html">ページ内エクスペリエンスのカスタム CSS リファレンス</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/embedding-brightcove-page-experiences-cms.html">CMS へのページ内エクスペリエンスの埋め込み</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/overview-page-experience-api.html">概要:ページ内エクスペリエンス API </a></li>
-                  
-                
-                  
-                    <li><a href="/develop/overview-page-experience-client-api.html">概要:ページ内エクスペリエンスクライアント API </a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experience-api-error-reference.html">ページ内エクスペリエンス API エラーリファレンス</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experience-client-api-sample.html">ページ内エクスペリエンスクライアント API サンプル</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/quick-start-page-experience-platform-rest-api.html">「クイックスタート:ページ内エクスペリエンスプラットフォーム (REST) API </a></li>
-                  
-                
-                  
-                    <li><a href="/develop/reference.html">ページ内エクスペリエンスプラットフォーム API リファレンス</a></li>
-                  
-                
-                  
-                    <li><a href="https://docs.brightcove.com/in-page-exerience-client-api/ClientApi.html">ページ内エクスペリエンスクライアント API リファレンス</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/training/index.html"><strong>トレーニング+ </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/training/gallery-training-videos.html">ギャラリー・トレーニング・ビデオ</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-introduction-gallery.html">トレーニング:ギャラリーの紹介</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">トレーニング:ポータル・エクスペリエンスの構築</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">トレーニング:ページ内エクスペリエンスの構築</a></li>
-                  
-                
-                  
-                    <li><a href="/training/brightcove-university.html">Brightcove Universityトレーニングコース</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/release-notes/index.html">リリースノート<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/gallery-release-notes.html">ギャラリーリリースノート</a></li>
-                  
-                
-                  
-                    <li><a href="/release-notes/gallery-template-release-notes.html">ギャラリーテンプレートのリリースノート</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/support/index.html"><strong>サポート+ </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                  
-                
-                  
-                    <li><a href="/support/viewing-brightcove-system-status-page.html">Brightcove のシステムステータスページの表示</a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">営業へのお問い合わせ</a></li>
-                  
-                
-                  
-                    <li><a href="/support/opening-case-with-brightcove-support.html">サポートケースを開く</a></li>
-                  
-                
-              </ul>
-            
-          
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-  <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="ナビゲーションメニュー"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">ページコンテンツ</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="新しいタブで開く" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
-
+---
+title: ページ内エクスペリエンスカスタム CSS リファレンス
+parent: Develop
+description: This topic outlines the CSS classes that are used when creating In-Page Experiences. This information is provided so you can further style your experiences using CSS.
+---
 <article class="bcls-article">
   <h1>ページ内エクスペリエンスのカスタム CSS リファレンス</h1>
-  <summary>このトピックでは、ページ内エクスペリエンスの作成時に使用される CSS クラスの概要を説明します。この情報は、CSS を使用して体験をさらにスタイル設定できるように提供されています。</summary>
+  <summary>{{ page.description }}</summary>
   <section class="bcls-section">
     <h2 id="styledcomponents">スタイル設定されたコンポーネント</h2>
     <p>これらの CSS クラスは、UI を使用してスタイル設定された項目に適用されます。&nbsp;これらのスタイルは、これらのクラスを使用して、カスタム CSS でオーバーライドすることができます。&nbsp;これらのクラスを使用して、UI スタイルをカスタム HTML に適用することもできます。&nbsp;これらのクラスは安定しており、テンプレートバージョン間で変更すべきではありません。</p>
@@ -635,47 +19,47 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-style-global</td>
+          <td><code translate="No">ee-components-style-global</code></td>
           <td>エクスペリエンスのためのグローバルなスタイリング</td>
         </tr>
         <tr>
-          <td>ee-components-style-anchor</td>
+          <td><code translate="No">ee-components-style-anchor</code></td>
           <td>通常のリンクのスタイル設定</td>
         </tr>
         <tr>
-          <td>ee-components-style-navigation</td>
+          <td><code translate="No">ee-components-style-navigation</code></td>
           <td>ナビゲーションリンクのスタイル設定 (戻るボタン、共有ボタンなど)</td>
         </tr>
         <tr>
-          <td>ee-components-style-videoInfo</td>
+          <td><code translate="No">ee-components-style-videoInfo</code></td>
           <td>ビデオ情報ボックスのスタイリング (オーバーレイ)</td>
         </tr>
         <tr>
-          <td>ee-components-style-videoTitle</td>
+          <td><code translate="No">ee-components-style-videoTitle</code></td>
           <td>ビデオタイトルのスタイリング（オーバーレイ以外）</td>
         </tr>
         <tr>
-          <td>ee-components-style-videoDescription</td>
+          <td><code translate="No">ee-components-style-videoDescription</code></td>
           <td>ビデオ説明のスタイリング (オーバーレイ)</td>
         </tr>
         <tr>
-          <td>ee-components-style-overlay</td>
+          <td><code translate="No">ee-components-style-overlay</code></td>
           <td>オーバーレイビデオ情報ボックスのスタイリング</td>
         </tr>
         <tr>
-          <td>ee-components-style-overlayTitle</td>
+          <td><code translate="No">ee-components-style-overlayTitle</code></td>
           <td>オーバーレイビデオタイトルのスタイリング</td>
         </tr>
         <tr>
-          <td>ee-components-style-overlayDescription</td>
+          <td><code translate="No">ee-components-style-overlayDescription</code></td>
           <td>オーバーレイビデオ説明のスタイリング</td>
         </tr>
         <tr>
-          <td>ee-components-style-overlayBanner</td>
+          <td><code translate="No">ee-components-style-overlayBanner</code></td>
           <td>オーバーレイバナー/インジケータスタイリング (監視インジケータ)</td>
         </tr>
         <tr>
-          <td>ee-components-style-playButton</td>
+          <td><code translate="No">ee-components-style-playButton</code></td>
           <td>再生ボタンの基本的なスタイル設定 (より複雑なスタイル設定については、再生ボタンコンポーネントを参照してください)</td>
         </tr>
       </tbody>
@@ -686,7 +70,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>これらは、カスタムCSSを使用してスタイルを設定することができる基本的なコンポーネントです。&nbsp;コンポーネントクラスは安定しており、テンプレートバージョン間で変更すべきではありません。&nbsp;内部クラスは比較的安定しており、ほとんどの場合、テンプレートバージョン間で変更されません。</p>
     <h3>再生ボタン</h3>
     <p>再生ボタンは、すべての動画のサムネイルに表示されます。</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-play-button.png"/></figure>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-play-button.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -697,47 +81,47 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-play-button</td>
+          <td><code translate="No">ee-components-play-button</code></td>
           <td>再生ボタンコンポーネント</td>
         </tr>
         <tr>
-          <td>ee-components-play-button-svg</td>
+          <td><code translate="No">ee-components-play-button-svg</code></td>
           <td>SVGコンテナ</td>
         </tr>
         <tr>
-          <td>ee-components-play-button-group</td>
+          <td><code translate="No">ee-components-play-button-group</code></td>
           <td>SVG 内部グループ</td>
         </tr>
         <tr>
-          <td>ee-components-play-button-button</td>
+          <td><code translate="No">ee-components-play-button-button</code></td>
           <td>再生ボタン SVG グループ</td>
         </tr>
         <tr>
-          <td>ee-components-play-button-frame</td>
+          <td><code translate="No">ee-components-play-button-frame</code></td>
           <td>再生ボタンの円枠</td>
         </tr>
         <tr>
-          <td>ee-components-play-button-icon</td>
+          <td><code translate="No">ee-components-play-button-icon</code></td>
           <td>再生ボタンアイコン</td>
         </tr>
         <tr>
-          <td>ee-components-play-button-countdown</td>
+          <td><code translate="No">ee-components-play-button-countdown</code></td>
           <td>カウントダウンSVGグループ</td>
         </tr>
         <tr>
-          <td>ee-components-play-button-pause</td>
+          <td><code translate="No">ee-components-play-button-pause</code></td>
           <td>カウントダウン一時停止アイコン</td>
         </tr>
         <tr>
-          <td>ee-components-play-button-text</td>
+          <td><code translate="No">ee-components-play-button-text</code></td>
           <td>カウントダウンテキスト</td>
         </tr>
         <tr>
-          <td>ee-components-play-button-track</td>
+          <td><code translate="No">ee-components-play-button-track</code></td>
           <td>カウントダウントラック</td>
         </tr>
         <tr>
-          <td>ee-components-play-button-runner</td>
+          <td><code translate="No">ee-components-play-button-runner</code></td>
           <td>カウントダウンの進行状況</td>
         </tr>
       </tbody>
@@ -745,7 +129,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>&nbsp;</p>
     <h3>矢印</h3>
     <p>カルーセルテンプレートの矢印 (シングルブリードおよびフルブリードプレゼンテーションオプション)</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-carousel-arrows.png"/></figure>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-carousel-arrows.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -756,19 +140,19 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-arrow</td>
+          <td><code translate="No">ee-components-arrow</code></td>
           <td>矢印コンポーネント (背景を含む)</td>
         </tr>
         <tr>
-          <td>ee-components-arrow-inner</td>
+          <td><code translate="No">ee-components-arrow-inner</code></td>
           <td>矢印</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>次の動画</h3>
-    <p>プレーヤーの設定で [ <strong>次のビデオに自動的に進む] が有効になっていると、大きいサムネイルに次のインジケータが表示されます</strong>。</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-up-next.png"/></figure>
+    <h3>次をアップする</h3>
+    <p>プレーヤー設定で [ <strong>次のビデオに進む]</strong>が自動的に有効になっている場合、大きなサムネールにアップネクストインジケータが表示されます。</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-up-next.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -779,31 +163,31 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-up-next</td>
+          <td><code translate="No">ee-components-up-next</code></td>
           <td>次のコンポーネントを上へ</td>
         </tr>
         <tr>
-          <td>ee-components-up-next-thumbnail</td>
+          <td><code translate="No">ee-components-up-next-thumbnail</code></td>
           <td>次の動画のサムネイル</td>
         </tr>
         <tr>
-          <td>ee-components-up-next-text</td>
+          <td><code translate="No">ee-components-up-next-text</code></td>
           <td>次のテキストを上げる (カウントダウン+動画名)</td>
         </tr>
         <tr>
-          <td>ee-components-up-next-text-countdown</td>
+          <td><code translate="No">ee-components-up-next-text-countdown</code></td>
           <td>カウントダウンテキスト</td>
         </tr>
         <tr>
-          <td>ee-components-up-next-close</td>
-          <td>クローズボタン</td>
+          <td><code translate="No">ee-components-up-next-close</code></td>
+          <td>[閉じる] ボタン</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
     <h3>視聴した動画インジケータ</h3>
     <p>[動画] 設定でオプションが有効になっていると、監視インジケータが表示されます。</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-watched.png"/></figure>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-watched.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -814,7 +198,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-watched-video-banner</td>
+          <td><code translate="No">ee-components-watched-video-banner</code></td>
           <td>視聴した動画インジケータ</td>
         </tr>
       </tbody>
@@ -824,9 +208,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="videocomponents">ビデオコンポーネント</h2>
     <p>個々のビデオに関連するコンポーネント。これらのクラスは安定しており、テンプレートバージョン間で変更すべきではありません。</p>
-    <h3>プレーヤー</h3>
-    <p>Brightcove プレーヤーのコンテナ。</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-player.png"/></figure>
+    <h3>プレイヤー</h3>
+    <p>Brightcoveプレーヤーのコンテナ。</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-player.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -837,7 +221,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-player</td>
+          <td><code translate="No">ee-components-player</code></td>
           <td>プレーヤーコンテナ</td>
         </tr>
       </tbody>
@@ -845,7 +229,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>&nbsp;</p>
     <h3>サムネイル</h3>
     <p>ビデオポスター画像の基本的なコンテナ（再生ボタンは含まれません）。</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-thumbnail.png"/></figure>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-thumbnail.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -856,14 +240,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-thumbnail</td>
+          <td><code translate="No">ee-components-thumbnail</code></td>
           <td>サムネイルコンテナ</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
     <h3>動画情報</h3>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-video-info.png"/></figure>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-video-info.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -874,43 +258,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-video-info</td>
+          <td><code translate="No">ee-components-video-info</code></td>
           <td>ビデオ情報コンテナ</td>
         </tr>
         <tr>
-          <td>ee-components-video-info-content</td>
+          <td><code translate="No">ee-components-video-info-content</code></td>
           <td>内部ビデオ情報コンテナ</td>
         </tr>
         <tr>
-          <td>ee-components-video-info-name</td>
+          <td><code translate="No">ee-components-video-info-name</code></td>
           <td>ビデオ名コンテナ</td>
         </tr>
         <tr>
-          <td>ee-components-video-info-name-content</td>
+          <td><code translate="No">ee-components-video-info-name-content</code></td>
           <td>動画名</td>
         </tr>
         <tr>
-          <td>ee-components-video-info-duration</td>
-          <td>Video duration</td>
+          <td><code translate="No">ee-components-video-info-duration</code></td>
+          <td>ビデオ再生時間</td>
         </tr>
         <tr>
-          <td>ee-components-video-info-description</td>
+          <td><code translate="No">ee-components-video-info-description</code></td>
           <td>ビデオの説明</td>
         </tr>
         <tr>
-          <td>ee-components-video-info-related-link</td>
+          <td><code translate="No">ee-components-video-info-related-link</code></td>
           <td>動画関連リンク</td>
         </tr>
         <tr>
-          <td>ee-components-video-info-download</td>
+          <td><code translate="No">ee-components-video-info-download</code></td>
           <td>ビデオダウンロードリンク</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>動画サムネイル</h3>
+    <h3>動画のサムネイル</h3>
     <p>ビデオ情報コンポーネントでラップされたサムネールコンポーネントが含まれます。</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-video-thumbnail.png"/></figure>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-video-thumbnail.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -921,7 +305,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-video-thumbnail</td>
+          <td><code translate="No">ee-components-video-thumbnail</code></td>
           <td>ビデオサムネールコンポーネント</td>
         </tr>
       </tbody>
@@ -931,9 +315,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="videocollectioncomp">ビデオコレクションコンポーネント</h2>
     <p>ビデオのコレクション（プレイリストなど）に関連するコンポーネント。これらのクラスは安定しており、テンプレートバージョン間で変更すべきではありません。</p>
-    <h3>カバーフロー</h3>
-    <p>動画の3次元カバーフロープレゼンテーション。</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-coverflow.png"/></figure>
+    <h3>カバーの流れ</h3>
+    <p>ビデオの3次元カバーフロープレゼンテーション。</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-coverflow.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -944,11 +328,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-cover-flow</td>
+          <td><code translate="No">ee-components-cover-flow</code></td>
           <td>カバーフローコンポーネント</td>
         </tr>
         <tr>
-          <td>ee-components-cover-flow-item</td>
+          <td><code translate="No">ee-components-cover-flow-item</code></td>
           <td>表紙フロー項目（動画サムネイル）</td>
         </tr>
       </tbody>
@@ -956,7 +340,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>&nbsp;</p>
     <h3>ドットストリップ</h3>
     <p>リスト内の各ビデオを表すドットのストリップ</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-dot-strip.png"/></figure>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-dot-strip.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -967,15 +351,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-dot-strip</td>
+          <td><code translate="No">ee-components-dot-strip</code></td>
           <td>ドットストリップコンポーネント</td>
         </tr>
         <tr>
-          <td>ee-components-dot-strip-item</td>
+          <td><code translate="No">ee-components-dot-strip-item</code></td>
           <td>ドットストリップアイテム</td>
         </tr>
         <tr>
-          <td>ee-components-dot-strip-dot</td>
+          <td><code translate="No">ee-components-dot-strip-dot</code></td>
           <td>ストリップの個々のドット</td>
         </tr>
       </tbody>
@@ -983,7 +367,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>&nbsp;</p>
     <h3>ポスターカルーセル</h3>
     <p>ポスター画像のカルーセル（矢印付き）</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-poster-carousel.png"/></figure>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-poster-carousel.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -994,19 +378,19 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-poster-carousel</td>
+          <td><code translate="No">ee-components-poster-carousel</code></td>
           <td>ポスターカルーセルコンポーネント</td>
         </tr>
         <tr>
-          <td>ee-components-poster-carousel-container</td>
+          <td><code translate="No">ee-components-poster-carousel-container</code></td>
           <td>行コンテナ</td>
         </tr>
         <tr>
-          <td>ee-components-poster-carousel-row</td>
+          <td><code translate="No">ee-components-poster-carousel-row</code></td>
           <td>ポスター行</td>
         </tr>
         <tr>
-          <td>ee-components-poster-carousel-cell</td>
+          <td><code translate="No">ee-components-poster-carousel-cell</code></td>
           <td>行項目（ビデオサムネイル）</td>
         </tr>
       </tbody>
@@ -1014,7 +398,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>&nbsp;</p>
     <h3>サムネイルストリップ</h3>
     <p>サムネイル画像のストリップ (矢印付き)</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-thumbnail-strip.png"/></figure>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-thumbnail-strip.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -1025,27 +409,27 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-thumbnail-strip</td>
+          <td><code translate="No">ee-components-thumbnail-strip</code></td>
           <td>サムネイルストリップコンポーネント</td>
         </tr>
         <tr>
-          <td>ee-components-thumbnail-strip-container</td>
+          <td><code translate="No">ee-components-thumbnail-strip-container</code></td>
           <td>行コンテナ</td>
         </tr>
         <tr>
-          <td>ee-components-thumbnail-strip-row</td>
+          <td><code translate="No">ee-components-thumbnail-strip-row</code></td>
           <td>サムネイル行</td>
         </tr>
         <tr>
-          <td>ee-components-thumbnail-strip-cell</td>
+          <td><code translate="No">ee-components-thumbnail-strip-cell</code></td>
           <td>行項目（ビデオサムネイル）</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>動画グリッド</h3>
+    <h3>ビデオグリッド</h3>
     <p>サムネイル画像のグリッド</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-video-grid.png"/></figure>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-video-grid.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -1056,19 +440,19 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-video-grid</td>
+          <td><code translate="No">ee-components-video-grid</code></td>
           <td>ビデオグリッドコンポーネント</td>
         </tr>
         <tr>
-          <td>ee-components-video-grid-cell</td>
+          <td><code translate="No">ee-components-video-grid-cell</code></td>
           <td>グリッドアイテム (ビデオサムネイル)</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>動画リスト</h3>
+    <h3>ビデオリスト</h3>
     <p>サムネイル画像の垂直リスト</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-video-list.png"/></figure>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-video-list.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -1079,11 +463,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-video-list</td>
+          <td><code translate="No">ee-components-video-list</code></td>
           <td>ビデオリストコンポーネント</td>
         </tr>
         <tr>
-          <td>ee-components-video-list-item</td>
+          <td><code translate="No">ee-components-video-list-item</code></td>
           <td>リストアイテム (動画サムネイル)</td>
         </tr>
       </tbody>
@@ -1092,12 +476,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="sharingcomponents">コンポーネントの共有</h2>
-    <p>ソーシャルシェアリングに関連するコンポーネント。&nbsp; Share Button クラスは比較的安定しており、テンプレートのバージョン間で変更されない可能性が高いです。&nbsp;共有パネルのクラスは、近い将来に変更される可能性が最も高く、不安定であるとみなす必要があります。</p>
+    <p>ソーシャルシェアリングに関連するコンポーネント。&nbsp; Share Button クラスは比較的安定しており、テンプレートバージョン間で変更されない可能性が最も高いです。&nbsp;共有パネルのクラスは、近い将来に変更される可能性が最も高く、不安定であるとみなす必要があります。</p>
     <h3>[共有] ボタン</h3>
     <p>共有ボタンまたはアイコン。</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-share-button.png"/></figure>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-share-button.png" /></figure>
     または
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-share-icons.png"/></figure>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-share-icons.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -1108,11 +492,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-share-button</td>
+          <td><code translate="No">ee-components-share-button</code></td>
           <td>共有ボタンコンポーネント</td>
         </tr>
         <tr>
-          <td>ee-components-share-button-button</td>
+          <td><code translate="No">ee-components-share-button-button</code></td>
           <td>共有ボタン (アイコンではない)</td>
         </tr>
       </tbody>
@@ -1120,8 +504,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>&nbsp;</p>
     <h3>パネルを共有</h3>
     <p>ソーシャル共有表示がボタンに設定されている場合の共有パネル</p>
-    <aside class="bcls-aside bcls-aside--information">注：これらのクラスは今後、変更される可能性があります。</aside>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-share-panel.png"/></figure>
+    <aside class="bcls-aside bcls-aside--information">注:これらのクラスは将来変更される可能性があります。</aside>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-share-panel.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
@@ -1132,23 +516,23 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-share-wrapper-panel</td>
+          <td><code translate="No">ee-components-share-wrapper-panel</code></td>
           <td>パネルラッパーコンポーネント</td>
         </tr>
         <tr>
-          <td>ee-components-share-wrapper-inner</td>
+          <td><code translate="No">ee-components-share-wrapper-inner</code></td>
           <td>パネル</td>
         </tr>
         <tr>
-          <td>ee-components-share-wrapper-close</td>
-          <td>クローズボタン</td>
+          <td><code translate="No">ee-components-share-wrapper-close</code></td>
+          <td>[閉じる] ボタン</td>
         </tr>
         <tr>
-          <td>ee-components-share-wrapper-item</td>
+          <td><code translate="No">ee-components-share-wrapper-item</code></td>
           <td>アイテムを共有する</td>
         </tr>
         <tr>
-          <td>ee-components-share-wrapper-item-name</td>
+          <td><code translate="No">ee-components-share-wrapper-item-name</code></td>
           <td>アイテム名を共有する</td>
         </tr>
       </tbody>
@@ -1170,13 +554,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-advertisement</td>
+          <td><code translate="No"></code>ee-components-advertisement</td>
           <td>広告コンポーネント</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>カスタムHTML</h3>
+    <h3>カスタム HTML</h3>
     <p>カスタム HTML コンポーネント</p>
     <p>&nbsp;</p>
     <table class="bcls-table">
@@ -1188,13 +572,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-html</td>
+          <td><code translate="No">ee-components-html</code></td>
           <td>カスタム HTML コンポーネント</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>画像</h3>
+    <h3>イメージ</h3>
     <p>イメージコンポーネント</p>
     <p>&nbsp;</p>
     <table class="bcls-table">
@@ -1206,11 +590,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-image</td>
+          <td><code translate="No">ee-components-image</code></td>
           <td>イメージコンポーネント</td>
         </tr>
         <tr>
-          <td>ee-components-image-image</td>
+          <td><code translate="No">ee-components-image-image</code></td>
           <td>内部イメージ</td>
         </tr>
       </tbody>
@@ -1228,7 +612,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-text</td>
+          <td><code translate="No">ee-components-text</code></td>
           <td>テキストコンポーネント</td>
         </tr>
       </tbody>
@@ -1246,7 +630,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-twitter</td>
+          <td><code translate="No">ee-components-twitter</code></td>
           <td>Twitterコンポーネント</td>
         </tr>
       </tbody>
@@ -1266,15 +650,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-app</td>
+          <td><code translate="No">ee-components-app</code></td>
           <td>最も外側のエクスペリエンス要素</td>
         </tr>
         <tr>
-          <td>ee-components-view</td>
-          <td>エクスペリエンスビュー (ページ内、ライトボックス)</td>
+          <td><code translate="No">ee-components-view<</code>/td>
+            <td>エクスペリエンスビュー (ページ内、ライトボックス)</td>
         </tr>
         <tr>
-          <td>ee-components-container</td>
+          <td><code translate="No">ee-components-container</code></td>
           <td>プラスボタンコンポーネントコンテナ</td>
         </tr>
       </tbody>
@@ -1282,160 +666,3 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>&nbsp;</p>
   </section>
 </article>
-
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">ページコンテンツ</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Brightcove サポート</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://status.brightcove.com">システムステータス</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">サポートへのお問い合わせ</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">ドキュメンテーション</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>トレーニング</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">オンラインコース</a>
-          </li>
-          <li>
-            <a href="https://studio.support.brightcove.com/training/register-training.html">コースに登録する</a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Brightcove University</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">Brightcove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">お問合せ</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. All rights reserved.</div>
-            </td>
-            <td><a href="https://www.brightcove.com/en/legal/privacy">プライバシー</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">利用規約</a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-
-</div>
-</div>
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>
